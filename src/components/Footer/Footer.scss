@@ -1,0 +1,19 @@
+@use "../../styles/global" as *;
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    
+        p {
+        font-size: 0.875rem;
+        @include respond-to(tablet) {
+            font-size: 1rem;
+        }
+        @include respond-to(laptop) {
+            font-size: 1.0625rem;
+        }
+        @include respond-to(desktop) {
+            font-size: 1.125rem;
+        }
+        }
+    }

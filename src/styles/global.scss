@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Colores
+$primary-color: #ffffff; // Fondo
+$secondary-color: #A6FF3C; // Secciones, tipografías o fondos secundarios
+$tertiary-color: #FFAD1F; // CTAs y elementos que llamen la atención
+
+// Fuentes
+$primary-font: 'Bebas Neue', sans-serif; // Títulos y elementos destacados
+$secondary-font: 'Poppins', sans-serif; // Textos largos y párrafos
+
+// Breakpoints
+$breakpoints: (
+    mobile: 360px,    // Mobile
+    tablet: 768px,    // Tablet
+    laptop: 1366px, // Laptop
+    desktop: 1920px   // Desktop
+);
+
+// Mixin para media queries
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+        }
+    } @else {
+        @warn "El breakpoint '#{$breakpoint}' no está definido en el mapa de breakpoints.";
+    }
+}
+
+
+// Estilos base
+body {
+    font-family: $secondary-font;
+    font-weight: 400;
+    color: $secondary-color;
+    background-color: $primary-color;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+// Encabezados
+h1, h2, h3, h4 {
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 {
+    font-family: $primary-font;
+    font-size: 2rem;
+    @include respond-to(tablet) {
+        font-size: 2.5rem;
+    }
+    @include respond-to(laptop) {
+        font-size: 2.75rem;
+    }
+    @include respond-to(desktop) {
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    font-family: $primary-font;
+    font-size: 1.75rem;
+    @include respond-to(tablet) {
+        font-size: 2rem;
+    }
+    @include respond-to(laptop) {
+        font-size: 2.25rem;
+    }
+    @include respond-to(desktop) {
+        font-size: 2.5rem;
+    }
+}
+
+h3 {
+    font-family: $primary-font;
+    font-size: 1.5rem;
+    @include respond-to(tablet) {
+        font-size: 1.75rem;
+    }
+    @include respond-to(laptop) {
+        font-size: 1.875rem;
+    }
+    @include respond-to(desktop) {
+        font-size: 2rem;
+    }
+}
+
+h4 {
+    font-family: $primary-font;
+    font-size: 1.25rem;
+    @include respond-to(tablet) {
+        font-size: 1.5rem;
+    }
+    @include respond-to(laptop) {
+        font-size: 1.625rem;
+    }
+    @include respond-to(desktop) {
+        font-size: 1.75rem;
+    }
+}
+
+// Párrafos
+p {
+    font-family: $secondary-font;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+
+    @include respond-to(tablet) {
+        font-size: 1.125rem;
+    }
+    @include respond-to(laptop) {
+        font-size: 1.1875rem;
+    }
+    @include respond-to(desktop) {
+        font-size: 1.25rem;
+    }
+}

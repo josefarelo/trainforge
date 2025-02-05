@@ -1,0 +1,74 @@
+@use "../../styles/global" as *;
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+        .header-menu__button {
+            display: flex;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0 10px;
+            img {
+                width: 15px;
+                height: 15px;
+            }
+            .header__menu-open {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                left: 0px;
+                background-color: #ffffff;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+                clip-path: inset(0px -10px -10px -10px);
+                .header__menu__container {
+                    display: flex;
+                    padding: 20px;
+                    cursor: auto;
+                    a {
+                        text-decoration: none;
+                        color: #333;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .header-menu--open {
+                display: flex;
+            }
+        }
+
+        .header__icon {
+            display: flex;
+            align-items: center;
+            width: 140px;
+            height: 30px;
+            padding-right: 55px;
+            image {
+                width: 140px;
+                height: 30px;
+                cursor: pointer;
+                @include respond-to(tablet) {
+                }
+                @include respond-to(laptop) {
+                }
+                @include respond-to(desktop) {
+                }
+            }
+        }
+
+        .header__button {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    }
