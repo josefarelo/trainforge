@@ -30,7 +30,7 @@ $breakpoints: (
 
 
 // Estilos base
-body {
+html, body {
     font-family: $secondary-font;
     font-weight: 400;
     color: $secondary-color;
@@ -38,6 +38,19 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 // Encabezados

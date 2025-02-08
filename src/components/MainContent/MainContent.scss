@@ -1,51 +1,12 @@
 @use "../../styles/global" as *;
 
 .main-content {
-    margin-bottom: 40px;
-    text-align: center;
-    
-        h3 {
-        font-size: 1.5rem;
+    flex: 1;
+    //padding: 20px;
         @include respond-to(tablet) {
-            font-size: 1.75rem;
         }
         @include respond-to(laptop) {
-            font-size: 1.875rem;
         }
         @include respond-to(desktop) {
-            font-size: 2rem;
-        }
-        }
-    
-        p {
-        font-size: 1rem;
-        @include respond-to(tablet) {
-            font-size: 1.125rem;
-        }
-        @include respond-to(laptop) {
-            font-size: 1.1875rem;
-        }
-        @include respond-to(desktop) {
-            font-size: 1.25rem;
-        }
-        }
-    
-        ul {
-        list-style-type: none;
-        padding: 0;
-    
-        li {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            @include respond-to(tablet) {
-            font-size: 1.125rem;
-            }
-            @include respond-to(laptop) {
-            font-size: 1.1875rem;
-            }
-            @include respond-to(desktop) {
-            font-size: 1.25rem;
-            }
-        }
         }
     }

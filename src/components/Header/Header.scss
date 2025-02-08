@@ -6,69 +6,134 @@
     padding: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 
-        .header-menu__button {
-            display: flex;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0 10px;
-            img {
-                width: 15px;
-                height: 15px;
-            }
-            .header__menu-open {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                width: 100%;
-                top: 50px;
-                left: 0px;
-                background-color: #ffffff;
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-                clip-path: inset(0px -10px -10px -10px);
-                .header__menu__container {
-                    display: flex;
-                    padding: 20px;
-                    cursor: auto;
-                    a {
-                        text-decoration: none;
-                        color: #333;
-                        font-size: 1rem;
-                        font-weight: 700;
-                        cursor: pointer;
-                    }
-                }
-            }
+    &__menu-button {
+        display: flex;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 10px;
+        img {
+            width: 15px;
+            height: 15px;
+        }
 
-            .header-menu--open {
+        .header__menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            top: 50px;
+            left: 0px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            clip-path: inset(0px -10px -10px -10px);
+            .header__menu-container {
                 display: flex;
+                padding: 20px;
+                cursor: auto;
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
             }
         }
 
-        .header__icon {
+        .header__menu--open {
             display: flex;
-            align-items: center;
-            width: 140px;
-            height: 30px;
-            padding-right: 55px;
-            image {
-                width: 140px;
-                height: 30px;
-                cursor: pointer;
-                @include respond-to(tablet) {
-                }
-                @include respond-to(laptop) {
-                }
-                @include respond-to(desktop) {
-                }
-            }
-        }
-
-        .header__button {
-            background: none;
-            border: none;
-            color: #333;
-            font-size: 0.75rem;
-            font-weight: 700;
         }
     }
+
+    &__logo-icon {
+        display: flex;
+        align-items: center;
+        width: 140px;
+        height: 30px;
+        image {
+            width: 140px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+
+    &__login-button {
+        font-family: $secondary-font;
+        position: absolute;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #333;
+        font-size: 0.8rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+
+    // Usando mixins para los breakpoints
+    @include respond-to(tablet) {
+        &__logo-container {
+            padding-left: 25px;
+            .header__logo-icon {
+                width: 150px;
+                height: 40px;
+                image {
+                    width: 150px;
+                    height: 40px;
+                }
+            }
+        }
+
+        &__login-button {
+            font-size: 0.82rem;
+            font-weight: 800;
+            padding-right: 25px;
+        }
+
+        &__menu-button {
+            display: none;
+        }
+
+        .header__menu-open {
+            display: none !important; // Asegura que el menú no se muestre
+        }
+    }
+
+    @include respond-to(laptop) {
+        justify-content: space-around;
+        &__logo-container {
+            padding: 0;
+            .header__logo-icon {
+                width: 160px;
+                image {
+                    width: 160px;
+                }
+            }
+        }
+
+        &__login-button {
+            position: static;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0;
+        }
+    }
+
+    @include respond-to(desktop) {
+        &__logo-container{
+            .header__logo-icon {
+                width: 200px;
+                height: 50px;
+                image {
+                    width: 200px;
+                    height: 50px;
+                }
+            }
+        }
+
+        &__login-button {
+            font-size: 0.95rem;
+        }
+    }
+}
