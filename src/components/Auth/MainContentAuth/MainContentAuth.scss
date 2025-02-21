@@ -1,0 +1,20 @@
+@use "../../../styles/global" as *;
+
+.main-content-auth {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: #333;
+    padding: 20px;
+    padding-top: 80px;
+    height: 50vh;
+
+    @include respond-to(tablet) {
+    }
+
+    @include respond-to(laptop) {
+    }
+
+    @include respond-to(desktop) {
+    }
+}

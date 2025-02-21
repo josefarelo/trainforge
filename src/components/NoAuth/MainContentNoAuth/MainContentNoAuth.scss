@@ -1,6 +1,6 @@
-@use "../../styles/global" as *;
+@use "../../../styles/global" as *;
 
-.main-content {
+.main-content-no-auth {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -40,7 +40,7 @@
             align-items: center;
             justify-content: center;
             margin: 20px;
-            .main-content__intro-image {
+            .main-content-no-auth__intro-image {
                 width: 100%;
                 height: auto;
             }
@@ -66,7 +66,7 @@
             align-items: center;
             justify-content: center;
             margin: 20px;
-            .main-content__about-image {
+            .main-content-no-auth__about-image {
                 width: 100%;
                 height: auto;
             }
@@ -94,7 +94,7 @@
             padding: 0;
             width: 100%;
 
-            .main-content__tools-item {
+            .main-content-no-auth__tools-item {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -113,7 +113,7 @@
                     border-radius: 10px;
                     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 
-                    .main-content__tools-item-icon {
+                    .main-content-no-auth__tools-item-icon {
                         width: 70px;
                         height: 70px;
 
@@ -192,7 +192,7 @@
                 flex-direction: row;
                 gap: 20px;
 
-                .main-content__tools-item {
+                .main-content-no-auth__tools-item {
                     justify-content: start;
                     text-align: center;
                     list-style: none;
@@ -202,7 +202,7 @@
                     &-icon-container {
                         margin: 40px 0;
     
-                        .main-content__tools-item-icon {
+                        .main-content-no-auth__tools-item-icon {
                             width: 70px;
                             height: 70px;
     
