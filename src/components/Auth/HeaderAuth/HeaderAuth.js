@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './HeaderAuth.scss';
 
@@ -10,7 +10,7 @@ import settingsIcon from "../../../assets/icons/header/header-ajustes-icono.svg"
 import logOutIcon from "../../../assets/icons/header/header-cerrar-sesion-icono.svg";
 
 const HeaderAuth = () => {
-    const [menuOpen, setMenuOpen] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {setMenuOpen(!menuOpen);};
 
