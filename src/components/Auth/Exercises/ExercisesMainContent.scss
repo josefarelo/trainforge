@@ -1,0 +1,172 @@
+@use "../../../styles/global" as *;
+
+.exercises {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__description1 {
+        margin: 10px 20px;
+        margin-top: 80px;
+        font-family: $primary-font;
+        font-size: 1.3rem;
+        color: $tertiary-color;
+    }
+
+    &__description2 {
+        margin: 10px 20px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    &__muscles {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 10px 20px;
+        margin-top: 30px;
+
+        &-group {
+            justify-items: center;
+            width: 125px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+
+            &-title {
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding-bottom: 5px;
+                color: #333;
+            }
+
+            &-img-container {
+                width: 100%;
+
+                .exercises__muscles-group-img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                }
+            }
+
+            &-link {
+                margin: 5px 0;
+                background-color: $secondary-color;
+                border-radius: 5px;
+                padding: 2px 7px;
+
+                a {
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    @include respond-to(tablet) {
+        
+        &__description1 {
+            margin: 10px 50px;
+            margin-top: 190px;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        &__description2 {
+            margin: 10px 50px;
+            font-size: 1.1rem;
+        }
+
+        &__muscles {
+            margin: 10px 50px;
+            margin-top: 60px;
+
+            &-group {
+                width: 170px;
+                padding: 15px;
+
+                &-title {
+                    font-size: 1.4rem;
+                }
+
+                &-img-container {
+                    .exercises__muscles-group-img {
+                        height: 350px;
+                    }
+                }
+
+                &-link {
+                    margin-top: 15px;
+                    padding: 5px 10px;
+
+                    a {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to(laptop) {
+
+        &__description1 {
+            margin: 15px 200px;
+            margin-top: 200px;
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+
+        &__description2 {
+            margin: 10px 200px;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        &__muscles {
+            margin-top: 80px;
+            gap: 25px;
+
+            &-group {
+                width: 200px;
+                padding: 15px;
+
+                &-title {
+                    font-size: 1.45rem;
+                }
+
+                &-img-container {
+                    padding-top: 10px;
+
+                    .exercises__muscles-group-img {
+                        height: 400px;
+                    }
+                }
+
+                &-link {
+                    margin-top: 20px;
+                    padding: 5px 20px;
+
+                    &:hover {
+                        background-color: $dark-secondary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to(desktop) {
+
+        &__muscles {
+            margin: 20px 140px;
+            margin-top: 60px;
+            gap: 40px;
+            &-group {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

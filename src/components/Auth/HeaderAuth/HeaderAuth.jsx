@@ -37,28 +37,28 @@ const HeaderAuth = () => {
                 {/* Despliega el acceso rápido a otras secciones */}
                 <div className={`header-auth__menu ${!menuOpen ? 'header-auth__menu--closed' : 'header-auth__menu--open'}`}>
                     <div className="header-auth__menu-container">
-                        <Link href="/es">INICIO</Link>
+                        <Link to="/es">INICIO</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/planificacion-de-entrenamiento">PLANIFICAR ENTRENAMIENTO</Link>
+                        <Link to="/es/planificacion-de-entrenamiento">PLANIFICAR ENTRENAMIENTO</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/registro-de-entrenamiento">REGISTRAR AVANCES</Link>
+                        <Link to="/es/registro-de-entrenamiento">REGISTRAR AVANCES</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/progreso">PROGRESO</Link>
+                        <Link to="/es/progreso">PROGRESO</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/calculadora-de-macronutrientes">CALCULADORA DE MACROS</Link>
+                        <Link to="/es/calculadora-de-macronutrientes">CALCULADORA DE MACROS</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/ejercicios">EJERCICIOS</Link>
+                        <Link to="/es/ejercicios">EJERCICIOS</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/ayuda">AYUDA</Link>
+                        <Link to="/es/ayuda">AYUDA</Link>
                     </div>
                     <div className="header-auth__menu-container">
-                        <Link href="/es/ajustes">AJUSTES</Link>
+                        <Link to="/es/ajustes">AJUSTES</Link>
                     </div>
                     <div className="header-auth__menu-container">
                         <a href="/">CERRAR SESIÓN</a>
@@ -82,7 +82,7 @@ const HeaderAuth = () => {
             {/* Muestra la opciones adicionales en el header */}
             <div className="header-auth__high-dimensions-menu">
                 <div className="header-auth__high-dimensions-menu-container">
-                    <Link href="/es/ayuda">Ayuda</Link>
+                    <Link to="/es/ayuda">Ayuda</Link>
                     <svg 
                         className="header-auth__high-dimensions-menu-container-icon" 
                         xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@ const HeaderAuth = () => {
                     </svg>
                 </div>
                 <div className="header-auth__high-dimensions-menu-container">
-                    <Link href="/es/ajustes">Ajustes</Link>
+                    <Link to="/es/ajustes">Ajustes</Link>
                     <svg 
                         className="header-auth__high-dimensions-menu-container-icon" 
                         xmlns="http://www.w3.org/2000/svg">
@@ -122,22 +122,22 @@ const HeaderAuth = () => {
             {/* Muestra la extensión del header que reemplaza el menú */}
             <div className="header-auth__extension">
                 <div className="header-auth__extension-container">
-                    <Link href="/es">INICIO</Link>
+                    <Link to="/es">INICIO</Link>
                 </div>
                 <div className="header-auth__extension-container">
-                    <Link href="/es/planificacion-de-entrenamiento">PLANIFICAR ENTRENAMIENTO</Link>
+                    <Link to="/es/planificacion-de-entrenamiento">PLANIFICAR ENTRENAMIENTO</Link>
                 </div>
                 <div className="header-auth__extension-container">
-                    <Link href="/es/registro-de-entrenamiento">REGISTRAR AVANCES</Link>
+                    <Link to="/es/registro-de-entrenamiento">REGISTRAR AVANCES</Link>
                 </div>
                 <div className="header-auth__extension-container">
-                    <Link href="/es/progreso">PROGRESO</Link>
+                    <Link to="/es/progreso">PROGRESO</Link>
                 </div>
                 <div className="header-auth__extension-container">
-                    <Link href="/es/calculadora-de-macronutrientes">CALCULADORA DE MACROS</Link>
+                    <Link to="/es/calculadora-de-macronutrientes">CALCULADORA DE MACROS</Link>
                 </div>
                 <div className="header-auth__extension-container">
-                    <Link href="/es/ejercicios">EJERCICIOS</Link>
+                    <Link to="/es/ejercicios">EJERCICIOS</Link>
                 </div>
             </div>
         </header>
