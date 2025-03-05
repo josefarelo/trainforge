@@ -28,18 +28,34 @@ const HeaderNoAuth = () => {
 
                 {/* Despliega el acceso rápido a otras secciones */}
                 <div className={`header-no-auth__menu ${menuOpen ? 'header-no-auth__menu--closed' : 'header-no-auth__menu--open'}`}>
-                    <div className="header-no-auth__menu-container">
-                        <a href="/rutinas">Rutinas</a>
-                    </div>
-                    <div className="header-no-auth__menu-container">
-                        <a href="/alimentacion">Alimentación</a>
-                    </div>
-                    <div className="header-no-auth__menu-container">
-                        <a href="/progreso">Progreso</a>
-                    </div>
-                    <div className="header-no-auth__menu-container">
-                        <a href="/contacto">Contacto</a>
-                    </div>
+                        <a 
+                            href="/rutinas"
+                            className="header-no-auth__menu-container"
+                            type="button"
+                        >
+                            Rutinas
+                        </a>
+                        <a 
+                            href="/alimentacion"
+                            className="header-no-auth__menu-container"
+                            type="button"
+                        >
+                            Alimentación
+                        </a>
+                        <a 
+                            href="/progreso"
+                            className="header-no-auth__menu-container"
+                            type="button"
+                        >
+                            Progreso
+                        </a>
+                        <a 
+                            href="/contacto"
+                            className="header-no-auth__menu-container"
+                            type="button"
+                        >
+                            Contacto
+                        </a>
                 </div>
             </button>
             <div className= "header-no-auth__logo-container">

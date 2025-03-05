@@ -34,16 +34,16 @@
             clip-path: inset(0px -10px -10px -10px);
             &-container {
                 display: flex;
-                padding: 20px;
+                align-items: center;
+                padding-left: 10px;
+                width: 100%;
+                height: 56px;
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 400;
+                color: #ffffff;
                 border-bottom: 1px solid $very-dark-tertiary-color;
-                cursor: auto;
-                a {
-                    text-decoration: none;
-                    color: #ffffff;
-                    font-size: 0.85rem;
-                    font-weight: 400;
-                    cursor: pointer;
-                }
+                cursor: pointer;
             }
 
             &--open {
@@ -60,7 +60,6 @@
         image {
             width: 180px;
             height: 40px;
-            cursor: pointer;
         }
     }
 

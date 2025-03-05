@@ -1,0 +1,160 @@
+@use "../../../../../styles/global.scss" as *;
+
+.back {
+    width: 100%;
+    margin-top: 60px;
+
+    &-title {
+        text-align: center;
+        padding: 0 20px;
+        padding-top: 20px;
+        font-size: 1.85rem;
+        color: $tertiary-color;
+    }
+
+    &-description {
+        padding: 0 20px;
+        padding-top: 20px;
+        font-size: 1rem;
+        font-weight: 300;
+        color: #333;
+    }
+
+    &-subtitle {
+        padding: 0 20px;
+        padding-top: 20px;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    @include respond-to(tablet) {
+        margin-top: 160px;
+
+        &-title {
+            padding: 20px 50px;
+            font-size: 2.1rem;
+            font-weight: 500;
+        }
+
+        &-description {
+            padding: 0 50px;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        &-subtitle {
+            font-size: 1.6rem;
+            padding: 0 35px;
+            padding-top: 35px;
+        }
+    }
+
+    @include respond-to(laptop) {
+
+        &-title {
+            font-size: 2.4rem;
+        }
+
+        &-description {
+            padding: 0 100px;
+            font-weight: 500;
+        }
+
+        &-subtitle {
+            font-size: 1.75rem;
+            padding: 0 75px;
+            padding-top: 45px;
+        }
+    }
+
+    @include respond-to(desktop) {
+
+        &-title {
+            font-size: 2.7rem;
+            padding-bottom: 30px;
+        }
+
+        &-description {
+            padding: 0 200px;
+            font-weight: 500;
+        }
+
+        &-subtitle {
+            text-align: center;
+            font-size: 2.05rem;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+.back-exercises-list {
+    padding: 0;
+    padding-bottom: 10px;
+    list-style-type: none;
+    color: #333;
+    justify-self: center;
+
+    .back-exercise {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 300px;
+        padding: 10px 10px;
+        margin: 20px 0;
+        font-family: $primary-font;
+        font-size: 0.95rem;
+        font-weight: 400;
+        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        
+        &-link {
+            text-align: center;
+            text-decoration: none;
+            width: 50px;
+            margin-top: 10px;
+            border-radius: 2px;
+            background-color: $secondary-color;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $primary-color;
+        }
+    }
+
+    @include respond-to(tablet) {
+        padding: 0 35px;
+
+        .back-exercise {
+            justify-content: space-between;
+            flex-direction: row;
+            width: 600px;
+            font-size: 1.05rem;
+            font-weight: 500;
+        
+            &-link {
+                width: 50px;
+                margin: 0;
+                padding: 2px;
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    @include respond-to(laptop) {
+        padding: 0 70px;
+        padding-bottom: 50px;
+    }
+
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 100px;
+        padding-bottom: 100px;
+
+        .back-exercise {
+            margin: 0;
+        }
+    }
+}

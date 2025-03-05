@@ -40,46 +40,67 @@ const MainContentAuth = () => {
                 <p className="main-content-auth-sections-inner-text">
                     Nuestra herramienta te ayuda a organizar tus entrenamientos de forma eficiente. Puedes crear rutinas personalizadas, ajustar ejercicios, series y repeticiones, y hacer seguimiento de tu progreso. Todo en un solo lugar, fácil de usar y adaptado a tus objetivos.
                 </p>
-                <div className="main-content-auth-sections-inner-link">
-                    <Link to="/es/planificacion-de-entrenamiento">PLANIFICAR</Link>
-                </div>
+                <Link 
+                    to="/es/planificacion-de-entrenamiento"
+                    className="main-content-auth-sections-inner-link"
+                    type="button"
+                >
+                    PLANIFICAR
+                </Link>
             </div>
             <div className="main-content-auth-sections" onClick={() => setIsVisible2(!isVisible2)}>REGISTRAR AVANCES</div>
             <div className={`main-content-auth-sections-inner ${isVisible2 ? 'visible' : ''}`}>
                 <p className="main-content-auth-sections-inner-text">
                     Puedes registrar cada entrenamiento de forma rápida y sencilla. Guarda los ejercicios, pesos, repeticiones y series para llevar un seguimiento detallado de tu progreso. Así podrás ver tu evolución y ajustar tu rutina según tus objetivos.
                 </p>
-                <div className="main-content-auth-sections-inner-link">
-                    <Link to="/es/registro-de-entrenamiento">REGISTRAR</Link>
-                </div>
+                <Link 
+                    to="/es/planificacion-de-entrenamiento"
+                    className="main-content-auth-sections-inner-link"
+                    type="button"
+                >
+                    REGISTRAR
+                </Link>
             </div>
             <div className="main-content-auth-sections" onClick={() => setIsVisible3(!isVisible3)}>PROGRESO</div>
             <div className={`main-content-auth-sections-inner ${isVisible3 ? 'visible' : ''}`}>
                 <p className="main-content-auth-sections-inner-text">
                     Consulta tu evolución en cualquier momento con gráficos y datos detallados. Visualiza cómo han cambiado tus pesos, repeticiones y volumen de entrenamiento a lo largo del tiempo. Así podrás ajustar tu rutina y mantenerte en el camino hacia tus objetivos.
                 </p>
-                <div className="main-content-auth-sections-inner-link">
-                    <Link to="/es/progreso">PROGRESO</Link>
-                </div>
+                <Link 
+                    to="/es/planificacion-de-entrenamiento"
+                    className="main-content-auth-sections-inner-link"
+                    type="button"
+                >
+                    PROGRESO
+                </Link>
             </div>
             <div className="main-content-auth-sections" onClick={() => setIsVisible4(!isVisible4)}>CALCULADORA DE MACRONUTRIENTES</div>
             <div className={`main-content-auth-sections-inner ${isVisible4 ? 'visible' : ''}`}>
                 <p className="main-content-auth-sections-inner-text">
                     Descubre cuántas proteínas, carbohidratos y grasas necesitas según tu objetivo. Nuestra calculadora te ayuda a ajustar tu alimentación para ganar músculo, perder grasa o mantener tu peso.
                 </p>
-                <div className="main-content-auth-sections-inner-link">
-                    <Link to="/es/calculadora-de-macronutrientes">CALCULAR</Link>
-                </div>
+                <Link 
+                    to="/es/planificacion-de-entrenamiento"
+                    className="main-content-auth-sections-inner-link"
+                    type="button"
+                >
+                    CALCULAR
+                </Link>
             </div>
             <div className="main-content-auth-sections" onClick={() => setIsVisible5(!isVisible5)}>EJERCICIOS</div>
             <div className={`main-content-auth-sections-inner ${isVisible5 ? 'visible' : ''}`}>
                 <p className="main-content-auth-sections-inner-text">
                     Aprende a hacer cada ejercicio de forma correcta con nuestras explicaciones detalladas. Encuentra la técnica adecuada, los músculos que trabajas y consejos para mejorar tu rendimiento. Ideal para entrenar con seguridad y sacarle el máximo provecho a cada movimiento.
                 </p>
-                <div className="main-content-auth-sections-inner-link">
-                    <Link to="/es/ejercicios">EJERCICIOS</Link>
-                </div>
+                <Link 
+                    to="/es/planificacion-de-entrenamiento"
+                    className="main-content-auth-sections-inner-link"
+                    type="button"
+                >
+                    EJERCICIOS
+                </Link>
             </div>
+
 
             {/* Muestra la opciones en formatos de mayor resolución */}
             <div className="main-content-auth-sections1">
@@ -94,9 +115,13 @@ const MainContentAuth = () => {
                         Nuestra herramienta te ayuda a organizar tus entrenamientos de forma eficiente. Puedes crear rutinas personalizadas, ajustar ejercicios, series y repeticiones, y hacer seguimiento de tu progreso. Todo en un solo lugar, fácil de usar y adaptado a tus objetivos.
                     </p>
                     <div className="main-content-auth-sections1-inner-link">
-                        <div className="main-content-auth-sections1-inner-link-container">
-                            <Link to="/es/planificacion-de-entrenamiento">PLANIFICAR</Link>
-                        </div>
+                        <Link 
+                            to="/es/planificacion-de-entrenamiento"
+                            className="main-content-auth-sections1-inner-link-container"
+                            type="button"
+                        >
+                            PLANIFICAR
+                        </Link>
                     </div>
                 </div>
                 <div className="main-content-auth-sections1-inner">
@@ -110,9 +135,13 @@ const MainContentAuth = () => {
                         Puedes registrar cada entrenamiento de forma rápida y sencilla. Guarda los ejercicios, pesos, repeticiones y series para llevar un seguimiento detallado de tu progreso. Así podrás ver tu evolución y ajustar tu rutina según tus objetivos.
                     </p>
                     <div className="main-content-auth-sections1-inner-link">
-                        <div className="main-content-auth-sections1-inner-link-container">
-                            <Link to="/es/registrar-marcas">REGISTRAR</Link>
-                        </div>
+                        <Link 
+                            to="/es/registro-de-entrenamiento"
+                            className="main-content-auth-sections1-inner-link-container"
+                            type="button"
+                        >
+                            REGISTRAR
+                        </Link>
                     </div>
                 </div>
                 <div className="main-content-auth-sections1-inner">
@@ -126,9 +155,13 @@ const MainContentAuth = () => {
                         Consulta tu evolución en cualquier momento con gráficos y datos detallados. Visualiza cómo han cambiado tus pesos, repeticiones y volumen de entrenamiento a lo largo del tiempo. Así podrás ajustar tu rutina y mantenerte en el camino hacia tus objetivos.
                     </p>
                     <div className="main-content-auth-sections1-inner-link">
-                        <div className="main-content-auth-sections1-inner-link-container">
-                            <Link to="/es/progreso">PROGRESO</Link>
-                        </div>
+                        <Link 
+                            to="/es/progreso"
+                            className="main-content-auth-sections1-inner-link-container"
+                            type="button"
+                        >
+                            PROGRESO
+                        </Link>
                     </div>
                 </div>
                 <div className="main-content-auth-sections1-inner">
@@ -142,9 +175,13 @@ const MainContentAuth = () => {
                         Descubre cuántas proteínas, carbohidratos y grasas necesitas según tu objetivo. Nuestra calculadora te ayuda a ajustar tu alimentación para ganar músculo, perder grasa o mantener tu peso.
                     </p>
                     <div className="main-content-auth-sections1-inner-link">
-                        <div className="main-content-auth-sections1-inner-link-container">
-                            <Link to="/es/calculadora-nutricional">CALCULAR</Link>
-                        </div>
+                        <Link 
+                            to="/es/calculadora-de-macronutrientes"
+                            className="main-content-auth-sections1-inner-link-container"
+                            type="button"
+                        >
+                            CALCULAR
+                        </Link>
                     </div>
                 </div>
                 <div className="main-content-auth-sections1-inner">
@@ -158,9 +195,13 @@ const MainContentAuth = () => {
                         Aprende a hacer cada ejercicio de forma correcta con nuestras explicaciones detalladas. Encuentra la técnica adecuada, los músculos que trabajas y consejos para mejorar tu rendimiento. Ideal para entrenar con seguridad y sacarle el máximo provecho a cada movimiento.
                     </p>
                     <div className="main-content-auth-sections1-inner-link">
-                        <div className="main-content-auth-sections1-inner-link-container">
-                            <Link to="/es/ejercicios">EJERCICIOS</Link>
-                        </div>
+                        <Link 
+                            to="/es/ejercicios"
+                            className="main-content-auth-sections1-inner-link-container"
+                            type="button"
+                        >
+                            EJERCICIOS
+                        </Link>
                     </div>
                 </div>
             </div>

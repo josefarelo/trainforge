@@ -9,9 +9,13 @@ const MainContentNoAuth = () => {
             <div className="main-content-no-auth__intro">
                 <h1 className="main-content-no-auth__intro-title">El éxito en el entrenamiento empieza con una planificación inteligente.</h1>
                 <p className="main-content-no-auth__intro-description">¿Quieres llevar tu entrenamiento al siguiente nivel? Organiza tu plan, sigue tu progreso y alcanza tus metas con TrainForge.</p>
-                <div className="main-content-no-auth__intro-link">
-                    <a className="main-content-no-auth__intro-link-name" href="*">EMPIEZA GRATIS</a>
-                </div>
+                <a 
+                    className="main-content-no-auth__intro-link"
+                    href="*"
+                    type="button"
+                >
+                    EMPIEZA GRATIS
+                </a>
                 <div className="main-content-no-auth__intro-image-container">
                     <img 
                         className="main-content-no-auth__intro-image"

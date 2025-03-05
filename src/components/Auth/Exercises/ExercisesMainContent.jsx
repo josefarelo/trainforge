@@ -30,9 +30,13 @@ const ExercisesMainContent = () => {
                                 src={ chestImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/pecho">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/pecho"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Espalda</h2>
@@ -43,12 +47,16 @@ const ExercisesMainContent = () => {
                             src={ backImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/espalda">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/espalda"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
-                    <h2 className="exercises__muscles-group-title">Hombros</h2>
+                    <h2 className="exercises__muscles-group-title">Hombro</h2>
                     <div className="exercises__muscles-group-img-container">
                         <img 
                                 alt="Muñeco con sistema muscular enfatizando los hombros." 
@@ -56,9 +64,13 @@ const ExercisesMainContent = () => {
                                 src={ shouldersImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/hombros">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/hombro"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Abdomen</h2>
@@ -69,9 +81,13 @@ const ExercisesMainContent = () => {
                                 src={ abdomenImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/abdomen">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/abdomen"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Bíceps</h2>
@@ -82,9 +98,13 @@ const ExercisesMainContent = () => {
                                 src={ bicepsImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/biceps">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/biceps"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Tríceps</h2>
@@ -95,12 +115,16 @@ const ExercisesMainContent = () => {
                                 src={ tricepsImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/triceps">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/triceps"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
-                    <h2 className="exercises__muscles-group-title">Antebrazos</h2>
+                    <h2 className="exercises__muscles-group-title">Antebrazo</h2>
                     <div className="exercises__muscles-group-img-container">
                         <img 
                                 alt="Muñeco con sistema muscular enfatizando el antebrazos." 
@@ -108,9 +132,13 @@ const ExercisesMainContent = () => {
                                 src={ forearmsImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/antebrazo">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/antebrazo"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Cuádriceps</h2>
@@ -121,9 +149,13 @@ const ExercisesMainContent = () => {
                                 src={ quadricepsImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/cuadriceps">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/cuadriceps"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Femoral</h2>
@@ -134,9 +166,13 @@ const ExercisesMainContent = () => {
                                 src={ hamstringsImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/femoral">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/femoral"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Glúteo</h2>
@@ -147,9 +183,13 @@ const ExercisesMainContent = () => {
                                 src={ glutesImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/gluteo">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/gluteo"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
                 <div className="exercises__muscles-group">
                     <h2 className="exercises__muscles-group-title">Pantorrila</h2>
@@ -160,9 +200,13 @@ const ExercisesMainContent = () => {
                                 src={ calvesImage } 
                         />
                     </div>
-                    <div className="exercises__muscles-group-link">
-                        <Link to="/es/ejercicios/pantorrila">VER EJERCICIOS</Link>
-                    </div>
+                    <Link 
+                        to="/es/ejercicios/pantorrilla"
+                        className="exercises__muscles-group-link"
+                        type="button"
+                    >
+                        VER EJERCICIOS
+                    </Link>
                 </div>
             </div>
         </section>

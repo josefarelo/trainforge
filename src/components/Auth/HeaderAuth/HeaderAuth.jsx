@@ -36,33 +36,69 @@ const HeaderAuth = () => {
 
                 {/* Despliega el acceso rápido a otras secciones */}
                 <div className={`header-auth__menu ${!menuOpen ? 'header-auth__menu--closed' : 'header-auth__menu--open'}`}>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es">INICIO</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/planificacion-de-entrenamiento">PLANIFICAR ENTRENAMIENTO</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/registro-de-entrenamiento">REGISTRAR AVANCES</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/progreso">PROGRESO</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/calculadora-de-macronutrientes">CALCULADORA DE MACROS</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/ejercicios">EJERCICIOS</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/ayuda">AYUDA</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <Link to="/es/ajustes">AJUSTES</Link>
-                    </div>
-                    <div className="header-auth__menu-container">
-                        <a href="/">CERRAR SESIÓN</a>
-                    </div>
+                        <Link 
+                            to="/es"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            INICIO
+                        </Link>
+                        <Link 
+                            to="/es/planificacion-de-entrenamiento"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            PLANIFICAR ENTRENAMIENTO
+                        </Link>
+                        <Link 
+                            to="/es/registro-de-entrenamiento"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            REGISTRAR AVANCES
+                        </Link>
+                        <Link 
+                            to="/es/progreso"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            PROGRESO
+                        </Link>
+                        <Link 
+                            to="/es/calculadora-de-macronutrientes"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            CALCULADORA DE MACROS
+                        </Link>
+                        <Link 
+                            to="/es/ejercicios"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            EJERCICIOS
+                        </Link>
+                        <Link 
+                            to="/es/ayuda"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            AYUDA
+                        </Link>
+                        <Link 
+                            to="/es/ajustes"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            AJUSTES
+                        </Link>
+                        <a 
+                            href="/"
+                            className="header-auth__menu-container"
+                            type="button"
+                        >
+                            CERRAR SESIÓN
+                        </a>
                 </div>
             </button>
             <div className= "header-auth__logo-container">
