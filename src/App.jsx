@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from "./components/ScrollToTop";
 import Home from './pages/Home';
 import Welcome from './pages/Welcome';
+import Planning from './pages/Planning'
 import Exercises from './pages/Exercises';
 import MuscleChest from './pages/MuscleChest'
 import MuscleBack from './pages/MuscleBack'
@@ -19,9 +21,11 @@ import './styles/global.scss';
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} /> {/* Ruta para la página de inicio sin loguear */}
         <Route path="/es" element={<Welcome />} /> {/* Ruta para la página de inicio logueado */}
+        <Route path="/es/planificacion-de-entrenamiento" element={<Planning />} /> {/* Ruta para la página del músculo pantorrilla*/}
         <Route path="/es/ejercicios" element={<Exercises />} /> {/* Ruta para la página de ejercicios*/}
         <Route path="/es/ejercicios/pecho" element={<MuscleChest />} /> {/* Ruta para la página del músculo pecho*/}
         <Route path="/es/ejercicios/espalda" element={<MuscleBack />} /> {/* Ruta para la página del músculo espalda*/}

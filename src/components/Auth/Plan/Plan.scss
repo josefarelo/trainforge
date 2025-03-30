@@ -1,0 +1,166 @@
+@use "../../../styles/global.scss" as *;
+
+.plan {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+
+    &__title {
+        padding: 30px;
+        margin: auto;
+        font-family: $primary-font;
+        font-size: 2rem;
+        font-weight: 500;
+        color: $tertiary-color;
+    }
+
+    &__description {
+        padding: 0 30px;
+        margin: auto;
+        color: #333;
+        font-weight: 500;
+    }
+
+    &__planning-type {
+        display: flex;
+        flex-direction: column;
+
+        &-simple {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            
+            &-img-container {
+                width: 100px;
+                height: 100px;
+                padding: 15px 0;
+                
+                .plan__planning-type-simple-img {
+                    max-width: 100%;
+                }
+            }
+        
+            &-description {
+                color: #333;
+            }
+        }
+
+        &-advanced {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            
+            &-img-container {
+                width: 100px;
+                height: 100px;
+                padding: 15px 0;
+                
+                .plan__planning-type-advanced-img {
+                    max-width: 100%;
+                }
+            }
+        
+            &-description {
+                color: #333;
+            }
+        }
+    }
+
+    &__plannings {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    @include respond-to(tablet) {
+        margin-top: 165px;
+
+        &__title {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+    }
+    
+    @include respond-to(laptop) {
+        &__title {
+            padding: 50px;
+            font-size: 2.4rem;
+        }
+
+        &__description {
+            padding: 0 100px;
+        }
+
+        &__planning-type {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 150px;
+            padding: 100px;
+
+            &-simple {
+                width: 600px;
+
+                &-title {
+                    font-weight: 500;
+                }
+
+                &-img-container {
+                    width: 110px;
+                    height: 110px;
+                }
+        
+                &-description {
+                    font-size: 1.25rem;
+                }
+            }
+
+            &-advanced {
+                width: 600px;
+
+                &-title {
+                    font-weight: 500;
+                }
+
+                &-img-container {
+                    width: 110px;
+                    height: 110px;
+                }
+        
+                &-description {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+
+        &__plannings {
+            align-items: start;
+            padding: 0 100px;
+
+            &-title {
+                font-weight: 500;
+                padding: 0 30px;
+            }
+        }
+    }
+
+    @include respond-to(desktop) {
+        &__title {
+            font-size: 2.6rem;
+            font-weight: 600;
+        }
+
+        &__planning-type {
+            justify-content: space-around;
+        }
+
+        &__plannings {
+            &-title {
+                margin-bottom: 15px;
+                padding: 0;
+            }
+        }
+    }
+}

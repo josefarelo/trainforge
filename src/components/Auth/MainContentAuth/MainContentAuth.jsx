@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import './MainContentAuth.scss';
 
 import appLogoGreen from "../../../assets/icons/logo/logo-img/TF-logo-green-img.png";
-import planningLogo  from "../../../assets/icons/walcome-page-icons/planning-logo.png"
-import registerLogo  from "../../../assets/icons/walcome-page-icons/registering-logo.png"
-import progressLogo  from "../../../assets/icons/walcome-page-icons/progress-logo.png"
-import calculatorLogo  from "../../../assets/icons/walcome-page-icons/calculator-logo.png"
-import exercisesLogo  from "../../../assets/icons/walcome-page-icons/exercises-logo.png"
+import planningLogo  from "../../../assets/icons/welcome-page-icons/planning-logo.png"
+import registerLogo  from "../../../assets/icons/welcome-page-icons/registering-logo.png"
+import progressLogo  from "../../../assets/icons/welcome-page-icons/progress-logo.png"
+import calculatorLogo  from "../../../assets/icons/welcome-page-icons/calculator-logo.png"
+import exercisesLogo  from "../../../assets/icons/welcome-page-icons/exercises-logo.png"
 
 
 const MainContentAuth = () => {
