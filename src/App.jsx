@@ -1,22 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './styles/global.scss';
 import ScrollToTop from "./components/ScrollToTop";
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Welcome from './pages/Welcome';
 import Planning from './pages/Planning'
 import Exercises from './pages/Exercises';
-import MuscleChest from './pages/MuscleChest'
-import MuscleBack from './pages/MuscleBack'
-import MuscleShoulder from './pages/MuscleShoulder'
-import MuscleAbdomen from './pages/MuscleAbdomen'
-import MuscleBiceps from './pages/MuscleBiceps'
-import MuscleTriceps from './pages/MuscleTriceps'
-import MuscleForearm from './pages/MuscleForearm'
-import MuscleQuadriceps from './pages/MuscleQuadriceps'
-import MuscleHamstring from './pages/MuscleHamstring'
-import MuscleGlute from './pages/MuscleGlute'
-import MuscleCalf from './pages/MuscleCalf'
-import './styles/global.scss';
+import MuscleChest from './pages/MuscleChest';
+import MuscleBack from './pages/MuscleBack';
+import MuscleShoulder from './pages/MuscleShoulder';
+import MuscleAbdomen from './pages/MuscleAbdomen';
+import MuscleBiceps from './pages/MuscleBiceps';
+import MuscleTriceps from './pages/MuscleTriceps';
+import MuscleForearm from './pages/MuscleForearm';
+import MuscleQuadriceps from './pages/MuscleQuadriceps';
+import MuscleHamstring from './pages/MuscleHamstring';
+import MuscleGlute from './pages/MuscleGlute';
+import MuscleCalf from './pages/MuscleCalf';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} /> {/* Ruta para la página de inicio sin loguear */}
+        <Route path="/login" element={<Login />} /> {/* Ruta para el inicio de sesión */}
         <Route path="/es" element={<Welcome />} /> {/* Ruta para la página de inicio logueado */}
         <Route path="/es/planificacion-de-entrenamiento" element={<Planning />} /> {/* Ruta para la página del músculo pantorrilla*/}
         <Route path="/es/ejercicios" element={<Exercises />} /> {/* Ruta para la página de ejercicios*/}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MainContentNoAuth.scss';
 import mainContentIntroImg from '../../../assets/images/main-content-intro-img.png';
 import mainContentAboutImg from '../../../assets/images/main-content-about-img1.png';
@@ -9,13 +10,13 @@ const MainContentNoAuth = () => {
             <div className="main-content-no-auth__intro">
                 <h1 className="main-content-no-auth__intro-title">El éxito en el entrenamiento empieza con una planificación inteligente.</h1>
                 <p className="main-content-no-auth__intro-description">¿Quieres llevar tu entrenamiento al siguiente nivel? Organiza tu plan, sigue tu progreso y alcanza tus metas con TrainForge.</p>
-                <a 
+                <Link 
                     className="main-content-no-auth__intro-link"
-                    href="*"
+                    to="/login"
                     type="button"
                 >
                     EMPIEZA GRATIS
-                </a>
+                </Link>
                 <div className="main-content-no-auth__intro-image-container">
                     <img 
                         className="main-content-no-auth__intro-image"

@@ -71,7 +71,7 @@ const HeaderNoAuth = () => {
                     </svg>
                 </a>
             </div>
-            <Link to="/es" className="header-no-auth__login-button" >INICIAR SESIÓN </Link>
+            <Link to="/login" className="header-no-auth__login-button" >INICIAR SESIÓN </Link>
         </header>
     );
 };

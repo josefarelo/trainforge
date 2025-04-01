@@ -1,0 +1,10 @@
+@use "../../../styles/global.scss" as *;
+
+
+
+@include respond-to(tablet) {
+}
+@include respond-to(laptop) {
+}
+@include respond-to(desktop) {
+}
