@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import './HeaderAuth.scss';
 
@@ -12,7 +13,27 @@ import logOutIcon from "../../../assets/icons/header/header-cerrar-sesion-icono.
 const HeaderAuth = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => {setMenuOpen(!menuOpen);};
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/api/auth/logout", {
+                method: "POST",
+                credentials: "include",
+            });
+    
+            if (!response.ok) throw new Error("Error al cerrar sesión");
+    
+            navigate("/"); // Redirigir siempre tras cerrar sesión
+        } catch (error) {
+            console.error("Error de conexión:", error);
+            navigate("/"); // Asegurar que el usuario regrese a la página de inicio
+        }
+    };
 
     return (
         <header className="header-auth">
@@ -92,15 +113,16 @@ const HeaderAuth = () => {
                         >
                             AJUSTES
                         </Link>
-                        <a 
-                            href="/"
+                        <Link 
+                            to="#"  
+                            onClick={handleLogout} 
                             className="header-auth__menu-container"
-                            type="button"
                         >
                             CERRAR SESIÓN
-                        </a>
+                        </Link>
                 </div>
             </button>
+
             <div className= "header-auth__logo-container">
                 <div className="header-auth__logo">
                     <svg 
@@ -142,7 +164,9 @@ const HeaderAuth = () => {
                     </svg>
                 </div>
                 <div className="header-auth__high-dimensions-menu-container">
-                    <a href="/">Cerrar sesión</a>
+                    <button onClick={handleLogout} className="header-auth__high-dimensions-menu-container-logout-button">
+                        Cerrar sesión
+                    </button>
                     <svg 
                         className="header-auth__high-dimensions-menu-container-icon" 
                         xmlns="http://www.w3.org/2000/svg">
