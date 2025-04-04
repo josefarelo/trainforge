@@ -4,6 +4,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const checkAuthStatus = async () => {
@@ -11,30 +12,50 @@ export const AuthProvider = ({ children }) => {
                 const response = await fetch("http://localhost:5000/api/auth/profile", {
                     credentials: "include",
                 });
-                if (response.ok) {
-                    const data = await response.json();
-                    setUser(data.user);
-                } else {
-                    setUser(null);
-                }
-            } catch (error) {
+                if (!response.ok) throw new Error("No autenticado");
+                const data = await response.json();
+                setUser(data.user);
+            } catch {
                 setUser(null);
+            } finally {
+                setLoading(false);
             }
         };
-
         checkAuthStatus();
     }, []);
 
+    const login = async (email, password) => {
+        try {
+            const response = await fetch("http://localhost:5000/api/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+                body: JSON.stringify({ email, password }),
+            });
+            if (!response.ok) throw new Error("Error en la autenticación");
+            const data = await response.json();
+            setUser(data.user);
+            window.location.href = "/es";
+        } catch {
+            setUser(null);
+        }
+    };
+
     const logout = async () => {
-        await fetch("http://localhost:5000/api/auth/logout", {
-            method: "POST",
-            credentials: "include",
-        });
-        setUser(null);
+        try {
+            await fetch("http://localhost:5000/api/auth/logout", {
+                method: "POST",
+                credentials: "include",
+            });
+            setUser(null);
+            sessionStorage.clear();
+            localStorage.clear();
+            window.location.href = "/";
+        } catch {}
     };
 
     return (
-        <AuthContext.Provider value={{ user, setUser, logout }}>
+        <AuthContext.Provider value={{ user, setUser, login, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );

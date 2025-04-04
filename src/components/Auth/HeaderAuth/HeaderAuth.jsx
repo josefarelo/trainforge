@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { useAuth } from "../../../context/AuthContext";
 import './HeaderAuth.scss';
 
 import logoWhite from "../../../assets/icons/logo/logo-text/TF-logo-white-text.png";
@@ -12,12 +13,13 @@ import logOutIcon from "../../../assets/icons/header/header-cerrar-sesion-icono.
 
 const HeaderAuth = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    
+    const navigate = useNavigate();
+    const { setUser } = useAuth();
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
-
-    const navigate = useNavigate();
 
     const handleLogout = async () => {
         try {
@@ -28,10 +30,12 @@ const HeaderAuth = () => {
     
             if (!response.ok) throw new Error("Error al cerrar sesión");
     
-            navigate("/"); // Redirigir siempre tras cerrar sesión
+            setUser(null); // Limpia el estado del usuario en el contexto
+    
+            navigate("/login"); // Redirige al login después del logout
         } catch (error) {
             console.error("Error de conexión:", error);
-            navigate("/"); // Asegurar que el usuario regrese a la página de inicio
+            navigate("/login");
         }
     };
 

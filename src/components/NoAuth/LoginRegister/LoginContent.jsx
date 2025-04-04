@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext";
 import "./LoginContent.scss";
 
 const LoginContent = () => {
@@ -10,27 +11,26 @@ const LoginContent = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
 
+    const { setUser } = useAuth();
+
     const handleLogin = async (e) => {
         e.preventDefault();
         setError(null);
-
+    
         try {
             const response = await fetch("http://localhost:5000/api/auth/login", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 credentials: "include",
                 body: JSON.stringify({ email, password })
             });
-
+    
             const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || "Error en el inicio de sesión");
-            }
-
-            navigate("/es");
+    
+            if (!response.ok) throw new Error(data?.error || "Error en el inicio de sesión");
+    
+            setUser(data.user);
+            if (data.user) navigate("/es");
         } catch (err) {
             setError(err.message);
         }

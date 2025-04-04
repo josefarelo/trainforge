@@ -4,22 +4,25 @@ const { authenticateUser } = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
-// Ruta para registrar un usuario
+// Registro de usuario
 router.post("/register", registerUser);
 
-// Ruta para el inicio de sesión
+// Inicio de sesión
 router.post("/login", loginUser);
 
-// Ruta protegida para probar autenticación
+// Ruta protegida (perfil de usuario)
 router.get("/profile", authenticateUser, (req, res) => {
     res.json({ message: "Acceso permitido", user: req.user });
 });
 
-// Ruta para el cierre de sesión
+// Cierre de sesión
 router.post("/logout", (req, res) => {
-    res.clearCookie("token", { httpOnly: true, secure: true, sameSite: "Strict" }); // Cambiar a secure: false para pruebas locales
-    return res.status(200).json({ message: "Sesión cerrada correctamente" });
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "Lax",
+    });
+    res.status(200).json({ message: "Sesión cerrada correctamente" });
 });
-
 
 module.exports = router;
