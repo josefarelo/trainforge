@@ -93,7 +93,7 @@ const MainContentAuth = () => {
                     Aprende a hacer cada ejercicio de forma correcta con nuestras explicaciones detalladas. Encuentra la técnica adecuada, los músculos que trabajas y consejos para mejorar tu rendimiento. Ideal para entrenar con seguridad y sacarle el máximo provecho a cada movimiento.
                 </p>
                 <Link 
-                    to="/es/planificacion-de-entrenamiento"
+                    to="/es/ejercicios"
                     className="main-content-auth-sections-inner-link"
                     type="button"
                 >

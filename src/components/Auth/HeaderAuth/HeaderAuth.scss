@@ -72,7 +72,6 @@
     }
 
 
-    // Usando mixins para los breakpoints
     @include respond-to(tablet) {
 
         &__logo-container {
@@ -106,8 +105,18 @@
                 display: flex;
                 align-items: center;
                 padding: 10px;
+
                 a {
                     text-decoration: none;
+                    color: #ffffff;
+                    font-size: 0.8rem;
+                    font-weight: 300;
+                    cursor: pointer;
+                }
+
+                &-logout-button {
+                    border: none;
+                    background-color: transparent;
                     color: #ffffff;
                     font-size: 0.8rem;
                     font-weight: 300;
@@ -191,6 +200,10 @@
                     font-size: 0.87rem;
                 }
 
+                &-logout-button {
+                    font-size: 0.87rem;
+                }
+
                 &-icon {
                     width: 17px;
                     height: 17px;
@@ -222,6 +235,10 @@
         &__high-dimensions-menu {
             &-container {
                 a {
+                    font-size: 0.85rem;
+                }
+
+                &-logout-button {
                     font-size: 0.85rem;
                 }
 
