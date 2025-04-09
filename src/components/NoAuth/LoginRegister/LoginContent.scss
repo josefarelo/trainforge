@@ -1,10 +1,169 @@
 @use "../../../styles/global.scss" as *;
 
+.login {
+    min-height: 355px;
+    padding-top: 60px;
+
+    &__form-container {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+
+        &-title {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: $tertiary-color;
+        }
+
+        .login__form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            &-input {
+                width: 100%;
+
+                &-email {
+                    .login__form-email {
+                        width: 80%;
+                        padding: 8px;
+                        margin-bottom: 10px;
+                        border: 1px solid #222;
+                        border-radius: 5px;
+                        font-family: $secondary-font;
+                        font-size: 0.8rem;
+                        color: #333;
+                    }
+                }
+
+                &-password {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+
+                    .login__form-password {
+                        width: 80%;
+                        padding: 8px;
+                        margin-bottom: 6px;
+                        border: 1px solid #222;
+                        border-radius: 5px;
+                        font-family: $secondary-font;
+                        font-size: 0.8rem;
+                        color: #333;
+                    }
+
+                    .login__form-see-password {
+                        display: flex;
+                        align-items: center;
+                        &-button {
+                            width: 20px;
+                            height: 20px;
+                            margin-bottom: 6px;
+                            box-sizing: content-box;
+                            padding: 0;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+
+                            &-img {
+                                fill: #222;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-link {
+                margin-bottom: 25px;
+                font-size: 0.8rem;
+                font-weight: 400;
+                color: $tertiary-color;
+                text-decoration: none;
+            }
+
+            &-login-button {
+                margin-bottom: 15px;
+                padding: 10px;
+                background-color: #222;
+                border: 1px solid #222;
+                border-radius: 5px;
+                font-family: $secondary-font;
+                font-weight: 500;
+                color: #ffffff;
+            }
+        }
+
+        .login__redirect-to-register {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #333;
+
+            &-link {
+                text-decoration: none;
+                color: $tertiary-color;
+            }
+        }
+    }
 
 
-@include respond-to(tablet) {
-}
-@include respond-to(laptop) {
-}
-@include respond-to(desktop) {
+
+    @include respond-to(tablet) {
+        min-height: 740px;
+
+        &__form-container {
+            align-items: center;
+            padding: 50px 100px;
+
+            &-title {
+                margin-bottom: 40px;
+            }
+
+            .login__form {
+                display: flex;
+                align-items: center;
+
+                &-input {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                    &-email {
+                        .login__form-email {
+                            width: 280px;
+                            padding: 10px;
+                        }
+                    }
+
+                    &-password {
+                        .login__form-password {
+                            width: 280px;
+                            margin-left: 29px;
+                            padding: 10px;
+                        }
+                    }
+                }
+
+                &-link {
+                    margin-bottom: 30px;                    
+                }
+
+                &-login-button {
+                    width: 300px;
+                    padding: 12px;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+    }
+    @include respond-to(laptop) {
+        &__form-container {
+            padding: 80px 100px;
+        }
+    }
+    @include respond-to(desktop) {
+        &__form-container {
+            padding: 120px 100px;
+        }
+    }
 }
