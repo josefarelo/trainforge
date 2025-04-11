@@ -40,13 +40,15 @@
                 &-password {
                     display: flex;
                     flex-direction: row;
-                    gap: 10px;
+                    margin-bottom: 6px;
+                    border: 1px solid #222;
+                    border-radius: 5px;
+                    width: 85%;
 
                     .login__form-password {
-                        width: 80%;
+                        width: 85%;
                         padding: 8px;
-                        margin-bottom: 6px;
-                        border: 1px solid #222;
+                        border: 1px solid transparent;
                         border-radius: 5px;
                         font-family: $secondary-font;
                         font-size: 0.8rem;
@@ -56,10 +58,12 @@
                     .login__form-see-password {
                         display: flex;
                         align-items: center;
+                        justify-content: center;
+                        width: 15%;
+
                         &-button {
-                            width: 20px;
-                            height: 20px;
-                            margin-bottom: 6px;
+                            width: 15px;
+                            height: 15px;
                             box-sizing: content-box;
                             padding: 0;
                             background-color: transparent;
@@ -136,9 +140,9 @@
                     }
 
                     &-password {
+                        width: 300px;
+
                         .login__form-password {
-                            width: 280px;
-                            margin-left: 29px;
                             padding: 10px;
                         }
                     }
