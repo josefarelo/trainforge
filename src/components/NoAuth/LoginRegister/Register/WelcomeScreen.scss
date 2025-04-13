@@ -1,0 +1,27 @@
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &__hey {
+        width: 250px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        color: #222;
+    }
+
+    &__logo {
+        width: 200px;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    &__presentation {
+        width: 330px;
+        font-size: 0.95rem;
+        color: #222;
+    }
+}
