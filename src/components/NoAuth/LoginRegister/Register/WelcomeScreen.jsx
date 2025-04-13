@@ -2,6 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./WelcomeScreen.scss";
 import logoOrange from "../../../../assets/icons/logo/TF-logo-orange.png";
+import gymNutriTech from "../../../../assets/images/gym-nutrition-technology.png";
+import userCharact from  "../../../../assets/images/user-characteristics.png";
+import workoutRegister from  "../../../../assets/images/workout-register.png";
+
 
 const WelcomeScreen = () => {
     const navigate = useNavigate();
@@ -20,25 +24,38 @@ const WelcomeScreen = () => {
                     alt="Logo de la aplicación TrainForge naranja" 
                     src={ logoOrange }
                 />
-                <p className="welcome__presentation">La aplicación que llevará tu entrenamiento al siguiente nivel</p>
 
-                <div className="welcome__data">
-                    // Acá pondré una imagen que represente cómo se pedirán los datos
-                    <p className="welcome__data-text">Registrá tus datos muy fácilmente</p>
-                </div>
+                <div className="welcome__approach-container">
+                    <div className="welcome__approach">
+                        <img 
+                            className="welcome__approach-img"
+                            alt="Una mancuerna con discos, una libreta que dice Workout y un celular donde se puede registrar datos de los ejercicios." 
+                            src={ workoutRegister }
+                        />
+                        <p className="welcome__approach-text">Registrá tus datos de forma rápida y sencilla</p>
+                    </div>
 
-                <div className="welcome__data-usage">
-                    // Acá pondré una imagen que represente en qué se utilizarán los datos
-                    <p className="welcome__data-usage-text">Influirán en tu alimentación y regulación de nutrientes</p>
+                    <div className="welcome__approach">
+                        <img 
+                            className="welcome__approach-img"
+                            alt="Una balanza digital, una cinta métrica y un celular donde figuran cantidades de calorías y macronutrientes." 
+                            src={ userCharact }
+                        />
+                        <p className="welcome__approach-text">Ajustá tu alimentación y balanceá tus nutrientes</p>
+                    </div>
 
-                    <div className="welcome__effort">
-                        // Acá pondré una imagen que represente el esfuerzo
-                        <p className="welcome__effort-title">Y combina el entrenamiento, la alimentación y los buenos hábitos en un estilo de vida</p>
+                    <div className="welcome__approach">
+                        <img 
+                            className="welcome__approach-img"
+                            alt="Una mancuerna con discos, una manzana verde y un celular." 
+                            src={ gymNutriTech }
+                        />
+                        <p className="welcome__approach-text">Combiná entrenamiento, alimentación y buenos hábitos para crear un estilo de vida saludable</p>
                     </div>
                 </div>
 
-                <button className="register__next-button" onClick={handleStart}>
-                    Empezar 
+                <button className="welcome__next-button" onClick={handleStart}>
+                    COMENZAR
                 </button>
         </div>
     );

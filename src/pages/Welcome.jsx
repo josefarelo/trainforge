@@ -6,7 +6,7 @@ import FooterAuth from '../components/Auth/FooterAuth/FooterAuth';
 
 const Welcome = () => {
     return (
-        <div className="welcome">
+        <div className="Welcome">
             <HeaderAuth />
             <MainContentAuth />
             <FooterAuth/>

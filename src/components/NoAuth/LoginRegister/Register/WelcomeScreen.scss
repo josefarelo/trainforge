@@ -1,3 +1,5 @@
+@use "../../../../styles/global" as *;
+
 .welcome {
     display: flex;
     align-items: center;
@@ -9,7 +11,7 @@
         text-align: center;
         margin-top: 30px;
         margin-bottom: 0;
-        font-size: 0.95rem;
+        font-size: 1rem;
         color: #222;
     }
 
@@ -19,9 +21,50 @@
         margin-bottom: 30px;
     }
 
-    &__presentation {
-        width: 330px;
-        font-size: 0.95rem;
-        color: #222;
+    .welcome__approach-container {
+        margin-bottom: 100px;
+        .welcome__approach {
+            padding: 10px 30px;
+
+            &-img {
+                width: 100%;
+                border: 1px solid transparent;
+                border-radius: 25px;
+            }
+
+            &-text {
+                text-align: center;
+                padding: 10px 0;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #333;
+            }
+        }
+    }
+
+    &__next-button {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 5%;
+        z-index: 100;
+        width: 85%;
+        padding: 10px 0;
+        background-color: $tertiary-color;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-family: $secondary-font;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primary-color;
+    }
+
+    
+    @include respond-to(tablet) {
+    }
+    @include respond-to(laptop) {
+    }
+    @include respond-to(desktop) {
     }
 }

@@ -1,0 +1,12 @@
+@use "../../../../styles/global.scss" as *;
+
+.register {
+    padding-top: 60px;
+}
+
+@include respond-to(tablet) {
+}
+@include respond-to(laptop) {
+}
+@include respond-to(desktop) {
+}

@@ -12,7 +12,7 @@ const MainContentNoAuth = () => {
                 <p className="main-content-no-auth__intro-description">¿Quieres llevar tu entrenamiento al siguiente nivel? Organiza tu plan, sigue tu progreso y alcanza tus metas con TrainForge.</p>
                 <Link 
                     className="main-content-no-auth__intro-link"
-                    to="/login"
+                    to="/register"
                     type="button"
                 >
                     EMPIEZA GRATIS
