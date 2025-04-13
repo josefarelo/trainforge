@@ -7,7 +7,6 @@
     flex-direction: column;
 
     &__hey {
-        width: 250px;
         text-align: center;
         margin-top: 30px;
         margin-bottom: 0;
@@ -22,17 +21,24 @@
     }
 
     .welcome__approach-container {
+        display: flex;
+        flex-direction: column;
         margin-bottom: 100px;
+
         .welcome__approach {
-            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px 0;
 
             &-img {
-                width: 100%;
+                width: 300px;
                 border: 1px solid transparent;
                 border-radius: 25px;
             }
 
             &-text {
+                width: 280px;
                 text-align: center;
                 padding: 10px 0;
                 font-size: 1.1rem;
@@ -49,7 +55,7 @@
         justify-content: center;
         bottom: 5%;
         z-index: 100;
-        width: 85%;
+        width: 300px;
         padding: 10px 0;
         background-color: $tertiary-color;
         border: 1px solid transparent;
@@ -58,13 +64,98 @@
         font-size: 1rem;
         font-weight: 600;
         color: $primary-color;
+        cursor: pointer;
     }
 
     
     @include respond-to(tablet) {
+        &__hey {
+            margin-top: 60px;
+            font-size: 1.2rem;
+        }
+
+        &__logo {
+            width: 220px;
+        }
+
+        .welcome__approach-container {
+            .welcome__approach {
+                padding: 15px 0;
+
+                &-img {
+                    width: 368px;
+                }
+
+                &-text {
+                    width: 328px;
+                    padding: 20px 0;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        &__next-button {
+            width: 368px;
+            font-size: 1.1rem;
+        }
     }
+
     @include respond-to(laptop) {
+        &__hey {
+            margin-top: 20px;
+        }
+
+        .welcome__approach-container {
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 0;
+
+            .welcome__approach {
+                padding: 0;
+
+                &-img {
+                    width: 300px;
+                }
+
+                &-text {
+                    width: 280px;
+                    font-size: 1.15rem;
+                }
+            }
+        }
+
+        &__next-button {
+            position: static;
+            width: 250px;
+            font-size: 1rem;
+        }
     }
+    
     @include respond-to(desktop) {
+        &__hey {
+            margin-top: 50px;
+        }
+
+        .welcome__approach-container {
+            gap: 50px;
+
+            .welcome__approach {
+                padding: 0;
+
+                &-img {
+                    width: 360px;
+                }
+
+                &-text {
+                    width: 320px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        &__next-button {
+            width: 360px;
+            font-size: 1.05rem;
+        }
     }
 }
