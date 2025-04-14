@@ -1,0 +1,80 @@
+@use "../../../../styles/global" as *;
+
+.nickname {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+
+    .nickname__content {
+        .nickname__title {
+            font-family: $primary-font;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .nickname__subtitle {
+            margin: 0;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            color: #333;
+        }
+
+        .nickname__input-name {
+            max-width: 300px;
+            margin: 15px 0;
+            padding: 20px 10px;
+            border: 2px solid #222;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #333;
+        }
+    }
+
+    &__button {
+        position: fixed;
+        bottom: 20px;
+        width: 320px;
+        padding: 10px 0;
+        background-color: $tertiary-color;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-family: $secondary-font;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primary-color;
+        cursor: pointer;
+    }
+
+    @include respond-to(tablet) {
+        align-items: center;
+        align-content: center;
+        padding: 80px 100px; 
+
+        .nickname__content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 375px;
+            height: 270px;
+
+            .nickname__title {
+                text-align: center;
+                width: 300px;
+                font-size: 1.3rem;
+            }
+
+            .nickname__subtitle {
+                text-align: center;
+                width: 260px;
+                font-size: 0.9rem;
+            }
+        }
+
+        &__button {
+            position: static;
+            font-size: 1.1rem;
+        }
+    }
+}

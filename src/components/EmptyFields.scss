@@ -1,0 +1,27 @@
+@use "../styles/global.scss" as *;
+
+.empty-fields-error {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid rgb(247, 66, 66);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: rgb(247, 66, 66);
+
+    &__alert-circle {
+        width: 20px;
+        height: 20px;
+        padding-right: 10px;
+    }
+
+    @include respond-to(tablet) {
+        padding: 15px;
+        font-size: 0.84rem;
+    }
+
+    @include respond-to(laptop) {
+        padding: 20px;
+        font-size: 0.85rem;
+    }
+}

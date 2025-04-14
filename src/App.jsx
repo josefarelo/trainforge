@@ -6,6 +6,7 @@ import './styles/global.scss';
 import ScrollToTop from "./components/ScrollToTop";
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Welcome from './pages/Welcome';
 import Planning from './pages/Planning'
 import Exercises from './pages/Exercises';
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} /> {/* Ruta para la página de inicio sin loguear */}
           <Route path="/login" element={<Login />} /> {/* Ruta para el inicio de sesión */}
+          <Route path="/register" element={<Register />} /> {/* Ruta para el registro de cuenta */}
           <Route path="/es" element={ <ProtectedRoute> <Welcome /> </ProtectedRoute> } /> {/* Ruta para la página de inicio logueado */}
           <Route path="/es/planificacion-de-entrenamiento" element={ <ProtectedRoute> <Planning /> </ProtectedRoute> } /> {/* Ruta para la página de planificación de entrenamientos */}
           <Route path="/es/ejercicios" element={ <ProtectedRoute> <Exercises /> </ProtectedRoute> } /> {/* Ruta para la página de ejercicios */}
