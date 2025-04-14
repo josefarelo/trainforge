@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useAuth } from "../../../../context/AuthContext";
 import "./RegisterContent.scss";
 import WelcomeScreen from "./WelcomeScreen";
 import NicknameScreen from "./NicknameScreen";
@@ -41,19 +38,19 @@ const RegisterContent = () => {
         setError(null)
         try {
             const response = await fetch("/api/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(userData),
-        })
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userData),
+            })
 
-        const data = await response.json()
+            const data = await response.json()
 
-        if (!response.ok) {
-            throw new Error(data.error || "Error al registrar usuario")
-        }
+            if (!response.ok) {
+                throw new Error(data.error || "Error al registrar usuario")
+            }
 
-        setSuccess(true)
-        console.log("Usuario registrado:", data.message)
+            setSuccess(true)
+            console.log("Usuario registrado:", data.message)
         } catch (err) {
             setError(err.message)
             console.error("Registro fallido:", err)

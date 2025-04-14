@@ -1,18 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./WelcomeScreen.scss";
 import logoOrange from "../../../../assets/icons/logo/TF-logo-orange.png";
-import gymNutriTech from "../../../../assets/images/gym-nutrition-technology.png";
-import userCharact from  "../../../../assets/images/user-characteristics.png";
-import workoutRegister from  "../../../../assets/images/workout-register.png";
+import gymNutriTech from "../../../../assets/images/gym-nutrition-technology.webp";
+import userCharact from  "../../../../assets/images/user-characteristics.webp";
+import workoutRegister from  "../../../../assets/images/workout-register.webp";
 
 
-const WelcomeScreen = () => {
-    const navigate = useNavigate();
-
-    const handleStart = () => {
-        navigate("/nickname");
-    };
+const WelcomeScreen = ({ onNext }) => {
 
     return (
         <div className="welcome">
@@ -54,7 +48,7 @@ const WelcomeScreen = () => {
                     </div>
                 </div>
 
-                <button className="welcome__next-button" onClick={handleStart}>
+                <button className="welcome__next-button" onClick={onNext}>
                     COMENZAR
                 </button>
         </div>

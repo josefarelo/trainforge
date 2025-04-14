@@ -42,12 +42,20 @@ export default function NicknameScreen({ userData, updateUserData, onNext, onBac
                 {showError && <EmptyFields className="nickname__error"/>}
             </div>
 
-            <button
-                onClick={handleNext}
-                className="nickname__button"
-            >
-                Continuar
-            </button>
+            <div className="nickname__button">
+                <button
+                    onClick={onBack}
+                    className="nickname__button-back"
+                >
+                    Volver
+                </button>
+                <button
+                    onClick={handleNext}
+                    className="nickname__button-next"
+                >
+                    Continuar
+                </button>
+            </div>
         </div>
     )
 }

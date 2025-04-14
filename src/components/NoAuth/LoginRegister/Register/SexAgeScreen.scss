@@ -1,34 +1,67 @@
 @use "../../../../styles/global" as *;
 
-.nickname {
+.sex-age {
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
 
-    .nickname__content {
-        .nickname__title {
+    &__content {
+        .sex-age__title {
+            padding-bottom: 10px;
             font-family: $primary-font;
             font-size: 1rem;
             font-weight: 600;
             color: #222;
         }
 
-        .nickname__subtitle {
-            margin: 0;
-            margin: 10px 0;
-            font-size: 0.85rem;
-            color: #333;
+        .sex-age__sex {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 10px 0;
+
+            &-title {
+                padding-bottom: 5px;
+                font-family: $primary-font;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #333;
+            }
+
+            &-input {
+                margin: 15px 0;
+                padding: 20px 10px;
+                border: 2px solid #222;
+                border-radius: 5px;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #333;
+            }
         }
 
-        .nickname__input-name {
-            max-width: 300px;
-            margin: 15px 0;
-            padding: 20px 10px;
-            border: 2px solid #222;
-            border-radius: 5px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #333;
+        .sex-age__age {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 10px 0;
+
+            &-title {
+                padding-bottom: 5px;
+                font-family: $primary-font;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #333;
+            }
+
+            &-input {
+                margin: 15px 0;
+                padding: 20px 10px;
+                border: 2px solid #222;
+                border-radius: 5px;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #333;
+            }
         }
     }
 
@@ -38,6 +71,7 @@
         gap: 10px;
         position: fixed;
         bottom: 20px;
+
         &-back {
             width: 320px;
             padding: 10px 0;
@@ -70,23 +104,17 @@
         align-content: center;
         padding: 80px 100px; 
 
-        .nickname__content {
+        .sex-age__content {
             display: flex;
             align-items: center;
             flex-direction: column;
             width: 375px;
-            height: 270px;
+            height: 460px;
 
-            .nickname__title {
+            .sex-age__title {
                 text-align: center;
                 width: 300px;
                 font-size: 1.3rem;
-            }
-
-            .nickname__subtitle {
-                text-align: center;
-                width: 260px;
-                font-size: 0.9rem;
             }
         }
 
