@@ -1,0 +1,164 @@
+@use "../../../../styles/global" as *;
+
+.height-weight {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+
+    &__content {
+        .height-weight__title {
+            padding-bottom: 10px;
+            font-family: $primary-font;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .height-weight__measurement-system {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 10px 0;
+
+            &-title {
+                padding-bottom: 5px;
+                font-family: $primary-font;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #333;
+            }
+
+            &-input {
+                margin: 15px 0;
+                padding: 20px 10px;
+                border: 2px solid #222;
+                border-radius: 5px;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #333;
+            }
+        }
+
+        .height-weight__height-weight-content {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .height-weight__height {
+                display: flex;
+                flex-direction: column;
+                width: 145px;
+                margin-bottom: 10px;
+
+                &-title {
+                    padding-bottom: 5px;
+                    font-family: $primary-font;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    color: #333;
+                }
+
+                &-input {
+                    margin: 15px 0;
+                    padding: 20px 10px;
+                    border: 2px solid #222;
+                    border-radius: 5px;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    color: #333;
+                }
+            }
+
+            .height-weight__weight {
+                display: flex;
+                flex-direction: column;
+                width: 145px;
+                margin-bottom: 10px;
+
+                &-title {
+                    padding-bottom: 5px;
+                    font-family: $primary-font;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    color: #333;
+                }
+
+                &-input {
+                    margin: 15px 0;
+                    padding: 20px 10px;
+                    border: 2px solid #222;
+                    border-radius: 5px;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    &__button {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        bottom: 20px;
+
+        &-back {
+            width: 320px;
+            padding: 10px 0;
+            background-color: #222;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            font-family: $secondary-font;
+            font-size: 1rem;
+            font-weight: 600;
+            color: $primary-color;
+            cursor: pointer;
+        }
+
+        &-next {
+            width: 320px;
+            padding: 10px 0;
+            background-color: $tertiary-color;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            font-family: $secondary-font;
+            font-size: 1rem;
+            font-weight: 600;
+            color: $primary-color;
+            cursor: pointer;
+        }
+    }
+
+    @include respond-to(tablet) {
+        align-items: center;
+        align-content: center;
+        padding: 80px 100px; 
+
+        .height-weight__content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 375px;
+            height: 460px;
+
+            .height-weight__title {
+                text-align: center;
+                width: 300px;
+                font-size: 1.3rem;
+            }
+        }
+
+        &__button {
+            position: static;
+            
+            &-back {
+                font-size: 1.1rem;
+            }
+            
+            &-next {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
