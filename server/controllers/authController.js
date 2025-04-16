@@ -3,8 +3,8 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
 const registerUser = (req, res) => {
-    const { username, nickname, birthdate, sex, height_cm, height_ft, weight_kg, weight_lb, email, password } = req.body;
-    if (!email || !password || !username) {
+    const { nickname, birthdate, sex, height_cm, height_ft, weight_kg, weight_lb, email, password } = req.body;
+    if (!email || !password) {
         return res.status(400).json({ error: "Faltan datos requeridos" });
     }
     
@@ -17,7 +17,7 @@ const registerUser = (req, res) => {
         bcrypt.hash(password, 10, (err, hashedPassword) => {
             if (err) return res.status(500).json({ error: "Error al hashear la contraseña" });
             
-            const userData = { username, nickname, birthdate, sex: sexValue, height_cm, height_ft, weight_kg, weight_lb, email };
+            const userData = { nickname, birthdate, sex: sexValue, height_cm, height_ft, weight_kg, weight_lb, email };
             User.create(userData, hashedPassword, (err) => {
                 if (err) return res.status(500).json({ error: "Error al registrar usuario" });
                 res.status(201).json({ message: "Usuario registrado exitosamente" });
@@ -51,7 +51,7 @@ const loginUser = (req, res) => {
                 maxAge: 15 * 24 * 60 * 60 * 1000,
             });
             
-            res.status(200).json({ message: "Inicio de sesión exitoso", user: { id: user.id, email: user.email, username: user.username } });
+            res.status(200).json({ message: "Inicio de sesión exitoso", user: { id: user.id, email: user.email, nickname: user.nickname } });
         });
     });
 };

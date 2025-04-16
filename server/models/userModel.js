@@ -5,11 +5,10 @@ const User = {
     create: (userData, hashedPassword, callback) => {
         const query = `
             INSERT INTO tbl_users 
-            (username, nickname, birthdate, sex, height_cm, height_ft, weight_kg, weight_lb, email, password_hash) 
+            (nickname, birthdate, sex, height_cm, height_ft, weight_kg, weight_lb, email, password_hash) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const values = [
-            userData.username,
             userData.nickname,
             userData.birthdate,
             userData.sex,
