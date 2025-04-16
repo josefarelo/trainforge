@@ -25,8 +25,9 @@
                 width: 100%;
 
                 &-email {
+                    width: 260px;
                     .login__form-email {
-                        width: 80%;
+                        width: 245px;
                         padding: 8px;
                         margin-bottom: 10px;
                         border: 1px solid #222;
@@ -43,23 +44,32 @@
                     margin-bottom: 6px;
                     border: 1px solid #222;
                     border-radius: 5px;
-                    width: 85%;
+                    width: 260px;
+
+                    &.focused{
+                        border: 2px solid #222;
+                    }
 
                     .login__form-password {
-                        width: 85%;
+                        width: 260px;
                         padding: 8px;
                         border: 1px solid transparent;
                         border-radius: 5px;
                         font-family: $secondary-font;
                         font-size: 0.8rem;
                         color: #333;
+
+                        &:focus{
+                            border: none;
+                            outline: none;
+                        }
                     }
 
                     .login__form-see-password {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        width: 15%;
+                        width: 40px;
 
                         &-button {
                             width: 15px;
@@ -113,10 +123,13 @@
 
 
     @include respond-to(tablet) {
+        display: flex;
+        justify-content: center;
         min-height: 740px;
 
         &__form-container {
             align-items: center;
+            width: 300px;
             padding: 50px 100px;
 
             &-title {
@@ -133,6 +146,7 @@
                     flex-direction: column;
 
                     &-email {
+                        align-self: self-start;
                         .login__form-email {
                             width: 280px;
                             padding: 10px;
