@@ -21,6 +21,8 @@
     "react-scripts": "^5.0.1",
     "schema-utils": "^4.3.0"
   },
+  
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

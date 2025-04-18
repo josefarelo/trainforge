@@ -34,28 +34,28 @@ const RegisterContent = () => {
     const handleBack = () => setStep((prev) => prev - 1)
 
     const handleRegister = async () => {
-        setLoading(true)
-        setError(null)
+        setLoading(true);
+        setError(null);
         try {
-            const response = await fetch("/api/register", {
+            const response = await fetch("/api/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(userData),
             })
 
-            const data = await response.json()
+            const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.error || "Error al registrar usuario")
+                throw new Error(data.error || "Error al registrar usuario");
             }
 
-            setSuccess(true)
-            console.log("Usuario registrado:", data.message)
+            setSuccess(true);
+            console.log("Usuario registrado:", data.message);
         } catch (err) {
-            setError(err.message)
-            console.error("Registro fallido:", err)
+            setError(err.message);
+            console.error("Registro fallido:", err);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
     
