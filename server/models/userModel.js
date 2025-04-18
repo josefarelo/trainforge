@@ -6,16 +6,16 @@ const User = {
         const query = `
             INSERT INTO tbl_users 
             (nickname, birthdate, sex, height_cm, height_ft, weight_kg, weight_lb, email, password_hash) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const values = [
             userData.nickname,
             userData.birthdate,
             userData.sex,
-            userData.height_cm,
-            userData.height_ft,
-            userData.weight_kg,
-            userData.weight_lb,
+            userData.height_cm === '' ? null : userData.height_cm,
+            userData.height_ft === '' ? null : userData.height_ft,
+            userData.weight_kg === '' ? null : userData.weight_kg,
+            userData.weight_lb === '' ? null : userData.weight_lb,
             userData.email,
             hashedPassword
         ];

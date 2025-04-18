@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './HeightWeightScreen.scss';
 import EmptyFields from "../../../EmptyFields";
 
@@ -6,12 +6,19 @@ export default function HeightWeightScreen({ userData, updateUserData, onNext, o
 
     const [showError, setShowError] = useState(false);
 
+    // Actualizar userData. Si el usuario aún no eligió sistema, usar "metric" por defecto
+    useEffect(() => {
+        if (!userData.measurementSystem) {
+            updateUserData({ measurementSystem: "metric" });
+        }
+    }, [userData.measurementSystem, updateUserData]);
+    
+    const isMetric = userData.measurementSystem === "metric"
+
     const handleChange = (e) => {
         const { name, value } = e.target
         updateUserData({ [name]: value })
     }
-    
-    const isMetric = userData.measurementSystem === "metric"
 
     const isFormValid = () => {
         if (isMetric) {

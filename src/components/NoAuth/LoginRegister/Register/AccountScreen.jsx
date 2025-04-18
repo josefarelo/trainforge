@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import EmptyFields from "../../../EmptyFields";
 import "./AccountScreen.scss";
 
@@ -16,6 +17,15 @@ export default function AccountScreen({
 
     const inputRef = useRef(null);
     const [isFocused, setIsFocused] = useState(false);
+
+    const navigate = useNavigate();
+
+    // Redirigir al login cuando el registro es exitoso
+    useEffect(() => {
+        if (success) {
+            navigate("/login");
+        }
+    }, [success, navigate]); 
 
     const handleDivClick = () => {
         inputRef.current?.focus();
