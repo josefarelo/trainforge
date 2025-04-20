@@ -88,6 +88,13 @@
                 }
             }
 
+            &-error {
+                margin-bottom: 5px;
+                padding: 5px;
+                font-size: 0.8rem;
+                color: rgb(247, 66, 66);
+            }
+
             &-link {
                 margin-bottom: 25px;
                 font-size: 0.8rem;
@@ -163,6 +170,11 @@
                     }
                 }
 
+                &-error {
+                    padding: 10px;
+                    font-size: 0.84rem;
+                }
+
                 &-link {
                     margin-bottom: 30px;                    
                 }
@@ -175,11 +187,18 @@
             }
         }
     }
+
     @include respond-to(laptop) {
         &__form-container {
             padding: 80px 100px;
         }
+
+        &-error {
+            padding: 15px;
+            font-size: 0.85rem;
+        }
     }
+    
     @include respond-to(desktop) {
         &__form-container {
             padding: 120px 100px;

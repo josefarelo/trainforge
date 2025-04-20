@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import EmptyFields from "../../../EmptyFields";
+import EmptyFields from "../../../EmptyFields/EmptyFields";
 import "./AccountScreen.scss";
 
 export default function AccountScreen({

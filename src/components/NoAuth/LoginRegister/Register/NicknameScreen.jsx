@@ -1,5 +1,5 @@
 import { useState } from "react";
-import EmptyFields from "../../../EmptyFields";
+import EmptyFields from "../../../EmptyFields/EmptyFields";
 import "./NicknameScreen.scss";
 
 export default function NicknameScreen({ userData, updateUserData, onNext, onBack }) {

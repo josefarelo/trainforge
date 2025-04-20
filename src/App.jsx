@@ -8,7 +8,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
-import Planning from './pages/Planning'
+import Planning from './pages/Planning';
+import RecordTraining from './pages/RecordTraining';
 import Exercises from './pages/Exercises';
 import MuscleChest from './pages/MuscleChest';
 import MuscleBack from './pages/MuscleBack';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/register" element={<Register />} /> {/* Ruta para el registro de cuenta */}
           <Route path="/es" element={ <ProtectedRoute> <Welcome /> </ProtectedRoute> } /> {/* Ruta para la página de inicio logueado */}
           <Route path="/es/planificacion-de-entrenamiento" element={ <ProtectedRoute> <Planning /> </ProtectedRoute> } /> {/* Ruta para la página de planificación de entrenamientos */}
+          <Route path="/es/registro-de-entrenamiento" element={ <ProtectedRoute> <RecordTraining /> </ProtectedRoute> } /> {/* Ruta para la página de registro de entrenamiento */}
           <Route path="/es/ejercicios" element={ <ProtectedRoute> <Exercises /> </ProtectedRoute> } /> {/* Ruta para la página de ejercicios */}
           <Route path="/es/ejercicios/pecho" element={ <ProtectedRoute> <MuscleChest /> </ProtectedRoute> } /> {/* Ruta para la página del músculo pecho */}
           <Route path="/es/ejercicios/espalda" element={ <ProtectedRoute> <MuscleBack /> </ProtectedRoute> } /> {/* Ruta para la página del músculo espalda */}

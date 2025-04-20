@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import './HeightWeightScreen.scss';
-import EmptyFields from "../../../EmptyFields";
+import EmptyFields from "../../../EmptyFields/EmptyFields";
 
 export default function HeightWeightScreen({ userData, updateUserData, onNext, onBack }) {
 

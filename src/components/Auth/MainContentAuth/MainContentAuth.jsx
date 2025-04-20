@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './MainContentAuth.scss';
-
+import Loader from "../../Loader/Loader";
 import appLogoGreen from "../../../assets/icons/logo/logo-img/TF-logo-green-img.png";
 import planningLogo  from "../../../assets/icons/welcome-page-icons/planning-logo.png"
 import registerLogo  from "../../../assets/icons/welcome-page-icons/registering-logo.png"
@@ -12,11 +12,34 @@ import exercisesLogo  from "../../../assets/icons/welcome-page-icons/exercises-l
 
 const MainContentAuth = () => {
 
+    const [user, setUser] = useState(null); // Estado para almacenar los datos del usuario
+
     const [isVisible1, setIsVisible1] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
     const [isVisible4, setIsVisible4] = useState(false);
     const [isVisible5, setIsVisible5] = useState(false);
+
+    // Hacer petición cuando se monte el componente
+    useEffect(() => {
+        fetch("api/auth/profile", {
+            credentials: "include",
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.user) {
+                setUser(data.user); // Guardar los datos del usuario en el estado
+            }
+        })
+        .catch((error) => {
+            console.error("Error al obtener los datos del usuario:", error);
+        });
+    }, []);
+
+    // Comprobamos si el estado `user` está disponible
+    if (!user) {
+        return <Loader />; // Mostramos un loader mientras los datos se cargan
+    }
 
     return (
         <section className="main-content-auth">
@@ -29,7 +52,7 @@ const MainContentAuth = () => {
                     />
                 </div>
                 <div className="main-content-auth-welcome-title">
-                    <h3>¡Hola Nombre! Bienvenido a Trainforge</h3>
+                    <h3>¡Hola {user.nickname}! Bienvenido a Trainforge</h3>
                 </div>
                 <h2>Es tu momento de mejorar, entrenar duro y lograr tus objetivos.</h2>
             </div>

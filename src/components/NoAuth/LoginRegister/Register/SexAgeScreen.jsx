@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './SexAgeScreen.scss';
-import EmptyFields from "../../../EmptyFields";
+import EmptyFields from "../../../EmptyFields/EmptyFields";
 
 export default function SexAgeScreen({ userData, updateUserData, onNext, onBack }) {
 
