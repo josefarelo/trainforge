@@ -1,6 +1,6 @@
 {
   "name": "trainforge",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "private": true,
   "dependencies": {
     "@radix-ui/react-toast": "^1.2.6",
