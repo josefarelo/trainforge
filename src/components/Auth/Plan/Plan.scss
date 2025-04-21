@@ -21,6 +21,13 @@
         font-weight: 500;
     }
 
+    &__plannings {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 40px 30px;
+    }
+
     &__planning-type {
         display: flex;
         flex-direction: column;
@@ -68,13 +75,6 @@
         }
     }
 
-    &__plannings {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 30px;
-    }
-
     @include respond-to(tablet) {
         margin-top: 165px;
 
@@ -94,11 +94,21 @@
             padding: 0 100px;
         }
 
+        &__plannings {
+            align-items: start;
+            margin: 60px 100px;
+
+            &-title {
+                font-weight: 500;
+                padding: 0 30px;
+            }
+        }
+
         &__planning-type {
             flex-direction: row;
             justify-content: space-between;
             gap: 150px;
-            padding: 100px;
+            padding: 30px;
 
             &-simple {
                 width: 600px;
@@ -134,16 +144,6 @@
                 }
             }
         }
-
-        &__plannings {
-            align-items: start;
-            padding: 0 100px;
-
-            &-title {
-                font-weight: 500;
-                padding: 0 30px;
-            }
-        }
     }
 
     @include respond-to(desktop) {
@@ -152,15 +152,15 @@
             font-weight: 600;
         }
 
-        &__planning-type {
-            justify-content: space-around;
-        }
-
         &__plannings {
             &-title {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
                 padding: 0;
             }
+        }
+
+        &__planning-type {
+            justify-content: space-around;
         }
     }
 }

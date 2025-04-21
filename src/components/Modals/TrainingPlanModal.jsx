@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { AlertCircle, Trash2, Pencil } from "lucide-react";
-
+import { Trash2, Pencil } from "lucide-react";
+import EmptyFields from "../EmptyFields/EmptyFields";
 import '../Modals/TrainingPlanModal.scss';
 
 function TrainingPlanModal() {
@@ -13,7 +13,7 @@ function TrainingPlanModal() {
     const [editingPlanId, setEditingPlanId] = useState(null);
 
     const handleContinue = () => {
-        if (!programName || !planType || !weeks) {
+        if (!programName || !planType) {
             setError(true);
             return;
         }
@@ -23,7 +23,7 @@ function TrainingPlanModal() {
         if (editingPlanId) {
             setPlans(
                 plans.map((plan) =>
-                    plan.id === editingPlanId ? { ...plan, name: programName, type: planType, weeks } : plan
+                    plan.id === editingPlanId ? { ...plan, name: programName, type: planType } : plan
                 )
             );
             setEditingPlanId(null);
@@ -71,7 +71,6 @@ function TrainingPlanModal() {
                                 <h3 className="plan__plannings-button-create-modal-container-content-title">{plan.name}</h3>
                                 <div className="plan__plannings-button-create-modal-container-content-values">
                                     <span>{plan.type === "simple" ? "Planificación simple" : "Planificación avanzada"}</span>
-                                    <span className="ml-4">{plan.weeks} semanas</span>
                                 </div>
                             </div>
                             <div className="plan__plannings-button-create-modal-container-actions">
@@ -121,24 +120,7 @@ function TrainingPlanModal() {
                             </div>
                         </div>
 
-                        <div className="plan__plannings-button-create-modal-container-content-values">
-                            <label>Cantidad de semanas:</label>
-                            <input 
-                                type="number" 
-                                min="1" 
-                                value={weeks} 
-                                onChange={(e) => setWeeks(e.target.value)} 
-                                className="plan__plannings-button-create-modal-container-content-values-input"
-                                placeholder="Número de semanas"
-                            />
-                        </div>
-
-                        {error && (
-                            <div className="plan__plannings-button-create-modal-container-alert">
-                                <AlertCircle className="plan__plannings-button-create-modal-container-alert-circle" />
-                                <span>Faltan campos por completar, debes llenarlos para poder continuar.</span>
-                            </div>
-                        )}
+                        {error && (<EmptyFields />)}
 
                         <div className="plan__plannings-button-create-modal-container-actions">
                             <button 
