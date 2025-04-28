@@ -1,0 +1,101 @@
+@use "../../styles/global.scss" as *;
+
+/* Cubre toda la pantalla con fondo oscuro y blur */
+.workout-planner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* Fondo oscuro y desenfocado */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurecido */
+    backdrop-filter: blur(5px); /* Desenfoque */
+    z-index: -1;
+  }
+
+  /* Contenedor interno del modal */
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 16px;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: $primary-font;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+
+  }
+
+  /* Título */
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $tertiary-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Botones generales */
+.btn {
+  padding: 10px 15px;
+  border: 1px solid #222;
+  border-radius: 50px;
+  font-family: $secondary-font;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+
+  &:hover {
+    background-color: #333;
+    color: white;
+  }
+}
+
+/* Botón de Agregar */
+.btn-add {
+  background-color: transparent;
+  color: #222;
+}
+
+/* Botón de cancelar */
+.btn-outline {
+  background-color: transparent;
+  color: #222;
+}
+
+/* Botón de guardar */
+.btn-primary {
+  background-color: #222;
+  color: white;
+}
+
+/* Acciones finales: Cancelar - Guardar */
+.planner-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}

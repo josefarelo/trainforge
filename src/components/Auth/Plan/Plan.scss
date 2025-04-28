@@ -26,6 +26,10 @@
         align-items: center;
         flex-direction: column;
         margin: 40px 30px;
+
+        &-title {
+            color: $tertiary-color;
+        }   
     }
 
     &__planning-type {
