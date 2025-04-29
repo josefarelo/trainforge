@@ -1,6 +1,5 @@
 @use "../../styles/global.scss" as *;
 
-/* Cubre toda la pantalla con fondo oscuro y blur */
 .workout-planner {
   position: fixed;
   top: 0;
@@ -50,7 +49,7 @@
 
   &__add-week-btn {
     padding: 5px;
-    margin-top: 5px;
+    margin: 5px 0;
     background-color: $tertiary-color;
     border: 1px solid $dark-tertiary-color;
     border-radius: 5px;
@@ -85,9 +84,9 @@
 
     &__add-week-btn {
       align-self: start;
-      width: 170px;
-      padding: 10px;
-      font-size: 0.81rem;
+      width: auto;
+      padding: 8px;
+      font-size: 0.78rem;
     }
     
     &__actions {
@@ -130,6 +129,74 @@
 }
 
 .week-card {
-  
+  padding: 10px 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 
+  &__container {
+    .week-card__title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .week-card__actions {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      padding: 5px 0;
+      
+      .week-card__add-day-btn,
+      .week-card__del-week-btn {
+        padding: 5px;
+        margin: 5px 0;
+        background-color: $tertiary-color;
+        border: 1px solid $dark-tertiary-color;
+        border-radius: 5px;
+        font-family: $secondary-font;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: #111;
+      }
+    }
+  }
+
+  &__content {
+    padding: 5px 0;
+  }
+
+  @include respond-to(tablet) {
+    .week-card__title {
+      font-size: 1.5rem;
+    }
+
+    .week-card__actions {
+      justify-content: space-between;
+      .week-card__add-day-btn,
+      .week-card__del-week-btn {
+        align-self: start;
+        width: auto;
+        padding: 8px;
+        font-size: 0.78rem;
+      }
+    }
+  }
+
+  @include respond-to(laptop) {
+    .week-card__title {
+      font-size: 1.7rem;
+    }
+
+    .week-card__actions {
+      .week-card__add-day-btn,
+      .week-card__del-week-btn {
+        font-size: 0.8rem;
+        cursor: pointer;
+  
+        &:hover {
+            background-color: $dark-tertiary-color;
+        }
+      }
+    }
+  }
 }
