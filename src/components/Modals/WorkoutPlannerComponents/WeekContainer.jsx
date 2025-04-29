@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DayContainer from "./DayContainer";
+import "../WorkoutPlannerAdvancedModal.scss";
 
 export default function WeekContainer({ week, onRemove, onUpdate, isFirstWeek = false }) {
     const [days, setDays] = useState(week.days);

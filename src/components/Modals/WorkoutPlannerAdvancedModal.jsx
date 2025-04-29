@@ -46,8 +46,8 @@ export default function WorkoutPlannerAdavanced({ programName, planType, onClose
     return (
         <div className="workout-planner">
             <div className="workout-planner__container">
-                <h1 className="workout-planner__title">Planificador de Entrenamiento</h1>
-                <div className="workout-planner__container">
+                <h1 className="workout-planner__title">Planificar Entrenamiento</h1>
+                <div className="workout-planner__content">
                     {weeks.map((week, index) => (
                         <WeekContainer
                             key={week.id}
@@ -63,8 +63,8 @@ export default function WorkoutPlannerAdavanced({ programName, planType, onClose
                     </button>
 
                     <div className="workout-planner__actions">
-                        <button className="workout-planner__action-btn" onClick={onClose}>Cancelar</button>
-                        <button className="workout-planner__action-btn" onClick={() => console.log("Guardar")}>Guardar</button>
+                        <button className="workout-planner__actions-btn" onClick={onClose}>Cancelar</button>
+                        <button className="workout-planner__actions-btn" onClick={() => console.log("Guardar")}>Guardar</button>
                     </div>
                 </div>
             </div>

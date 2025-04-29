@@ -12,7 +12,6 @@
   align-items: center;
   z-index: 1000;
 
-  /* Fondo oscuro y desenfocado */
   &::before {
     content: '';
     position: absolute;
@@ -20,18 +19,15 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Oscurecido */
-    backdrop-filter: blur(5px); /* Desenfoque */
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     z-index: -1;
   }
 
-  /* Contenedor interno del modal */
   &__container {
     position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: 16px;
-    padding: 24px;
+    width: 320px;
+    padding: 20px;
     background-color: white;
     border: 1px solid #000;
     border-radius: 12px;
@@ -43,59 +39,97 @@
     z-index: 1; /* Asegura que el contenido esté sobre el fondo */
     transform: scale(0.95);
     transition: transform 0.3s ease;
-
   }
 
-  /* Título */
   &__title {
+    text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
     color: $tertiary-color;
-    text-align: center;
-    margin-bottom: 20px;
+  }
+
+  &__add-week-btn {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: $tertiary-color;
+    border: 1px solid $dark-tertiary-color;
+    border-radius: 5px;
+    font-family: $secondary-font;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #111;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    &-btn {
+      padding: 5px 8px;
+      margin-top: 5px;
+      background-color: #222;
+      border: 1px solid #222;
+      border-radius: 5px;
+      font-family: $secondary-font;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__container {
+      width: 560px;
+    }
+
+    &__add-week-btn {
+      align-self: start;
+      width: 170px;
+      padding: 10px;
+      font-size: 0.81rem;
+    }
+    
+    &__actions {
+      justify-content: space-evenly;
+      width: 100%;
+      box-sizing: content-box;
+
+      &-btn {
+          padding: 10px 70px;
+          font-size: 0.81rem;
+      }
+    }
+  }
+
+  @include respond-to(laptop) {
+    &__container {
+      width: 820px;
+    }
+    
+    &__add-week-btn {
+      font-size: 0.85rem;
+      cursor: pointer;
+
+      &:hover {
+          background-color: $dark-tertiary-color;
+      }
+    }
+
+    &__actions {
+        &-btn {
+            font-size: 0.85rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
   }
 }
 
-/* Botones generales */
-.btn {
-  padding: 10px 15px;
-  border: 1px solid #222;
-  border-radius: 50px;
-  font-family: $secondary-font;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: center;
+.week-card {
+  
 
-  &:hover {
-    background-color: #333;
-    color: white;
-  }
-}
-
-/* Botón de Agregar */
-.btn-add {
-  background-color: transparent;
-  color: #222;
-}
-
-/* Botón de cancelar */
-.btn-outline {
-  background-color: transparent;
-  color: #222;
-}
-
-/* Botón de guardar */
-.btn-primary {
-  background-color: #222;
-  color: white;
-}
-
-/* Acciones finales: Cancelar - Guardar */
-.planner-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
 }
