@@ -73,12 +73,12 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
                         className="day-card__dropdown-toggle"
                         onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
-                        {`${dayName} ▼` || "Seleccionar día"}
+                        {`${dayName} ▼` || `Día ${day.id} ▼`}
                     </div>
 
                     {dropdownOpen && (
                         <div className="day-card__dropdown-menu">
-                            {[ dayName , "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].map((dayOption) => (
+                            {[ `Día ${day.id} `, "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].map((dayOption) => (
                                 <div
                                     key={dayOption}
                                     className="day-card__dropdown-item"

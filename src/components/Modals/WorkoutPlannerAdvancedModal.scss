@@ -36,69 +36,81 @@
     flex-direction: column;
     gap: 20px;
     font-family: $primary-font;
-    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+    z-index: 1;
     transform: scale(0.95);
     transition: transform 0.3s ease;
-  }
 
-  &__title {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: $tertiary-color;
-  }
+    &-scrollable {
+      width: 100%;
+      max-height: 80vh;
+      padding-right: 19px;        
+      overflow-y: auto;
+      .workout-planner__title {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $tertiary-color;
+      }
 
-  &__add-week-btn {
-    padding: 5px;
-    margin: 5px 0;
-    background-color: $tertiary-color;
-    border: 1px solid $dark-tertiary-color;
-    border-radius: 5px;
-    font-family: $secondary-font;
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: #111;
-  }
+      .workout-planner__content {
+        .workout-planner__add-week-btn {
+          padding: 5px;
+          margin: 5px 0;
+          background-color: $tertiary-color;
+          border: 1px solid $dark-tertiary-color;
+          border-radius: 5px;
+          font-family: $secondary-font;
+          font-size: 0.7rem;
+          font-weight: 500;
+          color: #111;
+        }
 
-  &__actions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+        .workout-planner__actions {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
 
-    &-btn {
-      padding: 5px 8px;
-      margin-top: 5px;
-      background-color: #222;
-      border: 1px solid #222;
-      border-radius: 5px;
-      font-family: $secondary-font;
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: #fff;
+          &-btn {
+            padding: 5px 8px;
+            margin-top: 5px;
+            background-color: #222;
+            border: 1px solid #222;
+            border-radius: 5px;
+            font-family: $secondary-font;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #fff;
+          }
+        }
+      }
     }
   }
 
   @include respond-to(tablet) {
     &__container {
       width: 560px;
-    }
 
-    &__add-week-btn {
-      align-self: start;
-      width: auto;
-      padding: 8px;
-      margin: 15px 0;
-      font-size: 0.78rem;
-    }
-    
-    &__actions {
-      justify-content: space-evenly;
-      width: 100%;
-      margin-top: 10px;
+      &-scrollable {
+        .workout-planner__content {
+          .workout-planner__add-week-btn {
+            align-self: start;
+            width: auto;
+            padding: 8px;
+            margin: 15px 0;
+            font-size: 0.78rem;
+          }
+          
+          .workout-planner__actions {
+            justify-content: space-evenly;
+            width: 100%;
+            margin-top: 10px;
 
-      &-btn {
-          padding: 10px 70px;
-          font-size: 0.78rem;
+            &-btn {
+                padding: 10px 70px;
+                font-size: 0.78rem;
+            }
+          }
+        }
       }
     }
   }
@@ -106,29 +118,34 @@
   @include respond-to(laptop) {
     &__container {
       width: 820px;
-    }
-    
-    &__add-week-btn {
-      font-size: 0.8rem;
-      cursor: pointer;
 
-      &:hover {
-          background-color: $dark-tertiary-color;
-      }
-    }
-
-    &__actions {
-      justify-content: end;
-      gap: 20px;
-
-        &-btn {
-            font-size: 0.85rem;
+      &-scrollable {
+        .workout-planner__content {
+          
+          .workout-planner__add-week-btn {
+            font-size: 0.8rem;
             cursor: pointer;
 
             &:hover {
-                background-color: #333;
+                background-color: $dark-tertiary-color;
             }
+          }
+
+          .workout-planner__actions {
+            justify-content: end;
+            gap: 20px;
+
+            &-btn {
+                font-size: 0.85rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #333;
+                }
+            }
+          }
         }
+      }
     }
   }
 }
@@ -429,7 +446,7 @@
       }
 
       &-input-container {
-        gap: 25px;
+        gap: 19px;
 
         .day-card__day-table-input {
           width: 350px;

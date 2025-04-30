@@ -46,25 +46,27 @@ export default function WorkoutPlannerAdavanced({ programName, planType, onClose
     return (
         <div className="workout-planner">
             <div className="workout-planner__container">
-                <h1 className="workout-planner__title">Planificar Entrenamiento</h1>
-                <div className="workout-planner__content">
-                    {weeks.map((week, index) => (
-                        <WeekContainer
-                            key={week.id}
-                            week={week}
-                            onRemove={removeWeek}
-                            onUpdate={updateWeek}
-                            isFirstWeek={index === 0}
-                        />
-                    ))}
+                <div className="workout-planner__container-scrollable">
+                    <h1 className="workout-planner__title">Planificar Entrenamiento</h1>
+                    <div className="workout-planner__content">
+                        {weeks.map((week, index) => (
+                            <WeekContainer
+                                key={week.id}
+                                week={week}
+                                onRemove={removeWeek}
+                                onUpdate={updateWeek}
+                                isFirstWeek={index === 0}
+                            />
+                        ))}
 
-                    <button className="workout-planner__add-week-btn" onClick={addWeek}>
-                        Agregar Semana
-                    </button>
+                        <button className="workout-planner__add-week-btn" onClick={addWeek}>
+                            Agregar Semana
+                        </button>
 
-                    <div className="workout-planner__actions">
-                        <button className="workout-planner__actions-btn" onClick={onClose}>Cancelar</button>
-                        <button className="workout-planner__actions-btn" onClick={() => console.log("Guardar")}>Guardar</button>
+                        <div className="workout-planner__actions">
+                            <button className="workout-planner__actions-btn" onClick={onClose}>Cancelar</button>
+                            <button className="workout-planner__actions-btn" onClick={() => console.log("Guardar")}>Guardar</button>
+                        </div>
                     </div>
                 </div>
             </div>
