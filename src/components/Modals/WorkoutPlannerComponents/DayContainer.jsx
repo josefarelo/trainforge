@@ -6,6 +6,8 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
     const [exercises, setExercises] = useState(day.exercises[0]?.tables || []);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentExerciseIndex, setCurrentExerciseIndex] = useState(null);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
 
     useEffect(() => {
         onUpdate({
@@ -14,10 +16,6 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
             exercises: [{ id: 1, tables: exercises }],
         });
     }, [exercises, dayName]);
-
-    const handleDayChange = (e) => {
-        setDayName(e.target.value);
-    };
 
     const addExerciseRow = () => {
         setExercises([
@@ -69,13 +67,33 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
 
     return (
         <div className="day-card">
-            <div className="day-card__container__">
-                <input
-                    type="text"
-                    className="day-card__name-input"
-                    value={dayName}
-                    onChange={handleDayChange}
-                />
+            <div className="day-card__container">
+                <div className="day-card__dropdown">
+                    <div
+                        className="day-card__dropdown-toggle"
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                    >
+                        {`${dayName} ▼` || "Seleccionar día"}
+                    </div>
+
+                    {dropdownOpen && (
+                        <div className="day-card__dropdown-menu">
+                            {[ dayName , "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].map((dayOption) => (
+                                <div
+                                    key={dayOption}
+                                    className="day-card__dropdown-item"
+                                    onClick={() => {
+                                        setDayName(dayOption);
+                                        setDropdownOpen(false);
+                                    }}
+                                >
+                                    {dayOption}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
                 {!isFirstDay && (
                     <button className="day-card__del-day-btn" onClick={() => onRemove(day.id)}>
                         🗑️ Eliminar Día
@@ -87,7 +105,6 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
                 <div className="day-card__day-table-fields">
                     <div className="day-card__day-table-fields-title">Músculo</div>
                     <div className="day-card__day-table-fields-title">Ejercicio</div>
-                    <div className="day-card__day-table-fields-title">Acciones</div>
                 </div>
 
                 {exercises.map((exercise, index) => (
@@ -103,7 +120,7 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
                             <input
                                 type="text"
                                 value={exercise.exercise}
-                                placeholder="Seleccionar ejercicio"
+                                placeholder="Ejercicio"
                                 readOnly
                                 className="day-card__day-table-input"
                             />
@@ -111,12 +128,13 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
                                 {exercise.details ? "Editar" : "Añadir"}
                             </button>
                         </div>
+
                         {index > 0 && (
                             <button
                                 className="day-card__day-table-del-btn"
                                 onClick={() => removeExerciseRow(exercise.id)}
                             >
-                                🗑️
+                                x
                             </button>
                         )}
                     </div>
@@ -124,7 +142,7 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
             </div>
 
             <button className="day-card__add-exercise-btn" onClick={addExerciseRow}>
-                ➕ Agregar Ejercicio
+                Agregar Ejercicio
             </button>
 
             {isModalOpen && (

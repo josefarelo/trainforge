@@ -37,7 +37,7 @@ export default function WeekContainer({ week, onRemove, onUpdate, isFirstWeek = 
             <div className="week-card__container">
                 <h2 className="week-card__title">Semana {week.id}</h2>
                 <div className="week-card__actions">
-                    <button className="week-card__add-day-btn" onClick={addDay}>➕ Agregar Día</button>
+                    <button className="week-card__add-day-btn" onClick={addDay}>Agregar Día</button>
                     {!isFirstWeek && (
                         <button className="week-card__del-week-btn" onClick={() => onRemove(week.id)}>🗑️ Eliminar Semana</button>
                     )}

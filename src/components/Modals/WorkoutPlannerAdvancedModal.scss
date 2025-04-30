@@ -1,5 +1,6 @@
 @use "../../styles/global.scss" as *;
 
+// WorkoutPlannerAdvancedModal
 .workout-planner {
   position: fixed;
   top: 0;
@@ -86,17 +87,18 @@
       align-self: start;
       width: auto;
       padding: 8px;
+      margin: 15px 0;
       font-size: 0.78rem;
     }
     
     &__actions {
       justify-content: space-evenly;
       width: 100%;
-      box-sizing: content-box;
+      margin-top: 10px;
 
       &-btn {
           padding: 10px 70px;
-          font-size: 0.81rem;
+          font-size: 0.78rem;
       }
     }
   }
@@ -107,7 +109,7 @@
     }
     
     &__add-week-btn {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       cursor: pointer;
 
       &:hover {
@@ -116,6 +118,9 @@
     }
 
     &__actions {
+      justify-content: end;
+      gap: 20px;
+
         &-btn {
             font-size: 0.85rem;
             cursor: pointer;
@@ -128,6 +133,8 @@
   }
 }
 
+
+// WeekContainer
 .week-card {
   padding: 10px 0;
   border-top: 1px solid #000;
@@ -197,6 +204,253 @@
             background-color: $dark-tertiary-color;
         }
       }
+    }
+  }
+}
+
+
+// DayContainer
+.day-card {
+  margin: 20px 0;
+  padding-top: 15px;
+  border-top: 1px solid $very-dark-tertiary-color;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .day-card__dropdown {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+
+      &-toggle {
+        padding: 8px 0;
+        background-color: #ffffff;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #222;
+        cursor: pointer;
+      }
+
+      &-menu {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        color: #222;
+        z-index: 10;
+
+        .day-card__dropdown-item {
+          padding: 8px;
+          cursor: pointer;
+
+          &:hover {
+              background-color: #eee;
+          }
+        }
+      }
+    }
+
+    .day-card__del-day-btn {
+      padding: 5px;
+      margin: 5px 0;
+      background-color: $tertiary-color;
+      border: 1px solid $dark-tertiary-color;
+      border-radius: 5px;
+      font-family: $secondary-font;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #111;
+      cursor: pointer;
+    }
+  }
+
+  &__day-table {
+    &-fields {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      border-bottom: 1px solid #555;
+
+      &-title {
+        padding: 5px;
+        color: #222;
+        font-family: $primary-font;
+      }
+    }
+
+    &-input-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      margin-top: 10px;
+
+      .day-card__day-table-input {
+        width: 120px;
+        height: 20px;
+        margin-left: 20px;
+        margin-top: 10px;
+        border: 1px solid #333;
+        border-radius: 3px;
+        text-align: center;
+        font-family: $secondary-font;
+        font-size: 0.8rem;
+      }
+      
+      .day-card__day-table-excercise {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .day-card__day-table-edt-del-btn {
+          width: 130px;
+          margin-left: 20px;
+          padding: 5px 8px;
+          background-color: #222;
+          border: 1px solid #222;
+          border-radius: 5px;
+          font-family: $secondary-font;
+          font-size: 0.7rem;
+          font-weight: 500;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+
+      .day-card__day-table-del-btn {
+        height: 20px;
+        width: 20px;
+        margin-left: -5px;
+        margin-top: 10px;
+        border: none;
+        background-color: transparent;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #222;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__add-exercise-btn {
+    padding: 5px;
+    margin: 5px 0;
+    background-color: $tertiary-color;
+    border: 1px solid $dark-tertiary-color;
+    border-radius: 5px;
+    font-family: $secondary-font;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #111;
+    cursor: pointer;
+  }
+
+  @include respond-to(tablet) {
+    &__container {
+      .day-card__dropdown {
+        &-toggle {
+          font-size: 1.2rem;
+        }
+
+        &-menu {
+          .day-card__dropdown-item {
+            font-size: 1.1rem;
+          }
+        }
+      }
+
+      .day-card__del-day-btn {
+        width: auto;
+        padding: 8px;
+        font-size: 0.78rem;
+      }
+    }
+
+    &__day-table {
+      &-fields {
+        &-title {
+          font-size: 1.05rem;
+        }
+      }
+
+      &-input-container {
+        .day-card__day-table-input {
+          width: 230px;
+          font-size: 0.85rem;
+        }
+      }
+
+      .day-card__day-table-excercise {
+        .day-card__day-table-edt-del-btn {
+          width: 237px;
+          font-size: 0.75rem;
+        }
+      }
+
+      .day-card__day-table-del-btn {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__add-exercise-btn {
+      width: auto;
+      padding: 8px;
+      font-size: 0.75rem;
+    }
+  }
+
+  @include respond-to(laptop) {
+    &__container {
+      .day-card__dropdown {
+        &-toggle {
+          font-size: 1.3rem;
+        }
+
+        &-menu {
+          .day-card__dropdown-item {
+            font-size: 1.15rem;
+          }
+        }
+      }
+
+      .day-card__del-day-btn {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__day-table {
+      &-fields {
+        &-title {
+          font-size: 1.2rem;
+        }
+      }
+
+      &-input-container {
+        gap: 25px;
+
+        .day-card__day-table-input {
+          width: 350px;
+          font-size: 0.95rem;
+        }
+      }
+
+      .day-card__day-table-excercise {
+        .day-card__day-table-edt-del-btn {
+          width: 357px;
+          font-size: 0.83rem;
+        }
+      }
+
+      .day-card__day-table-del-btn {
+        font-size: 1.3rem;
+      }
+    }
+
+    &__add-exercise-btn {
+      font-size: 0.8rem;
     }
   }
 }

@@ -59,7 +59,7 @@ export default function WorkoutPlannerAdavanced({ programName, planType, onClose
                     ))}
 
                     <button className="workout-planner__add-week-btn" onClick={addWeek}>
-                        ➕ Agregar Semana
+                        Agregar Semana
                     </button>
 
                     <div className="workout-planner__actions">
