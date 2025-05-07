@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeekContainer from "./WorkoutPlannerComponents/WeekContainer";
+import WeekContainer from "./WorkoutPlannerAdvancedComponents/WeekContainer";
 import "./WorkoutPlannerAdvancedModal.scss";
 
 export default function WorkoutPlannerAdavanced({ programName, planType, onClose }) {

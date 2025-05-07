@@ -1,6 +1,5 @@
 @use "../../styles/global.scss" as *;
 
-// WorkoutPlannerAdvancedModal
 .workout-planner {
   position: fixed;
   top: 0;
@@ -28,7 +27,7 @@
     position: relative;
     width: 320px;
     padding: 20px;
-    background-color: white;
+    background-color: #ffffff;
     border: 1px solid #000;
     border-radius: 12px;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%);
@@ -468,6 +467,159 @@
 
     &__add-exercise-btn {
       font-size: 0.8rem;
+    }
+  }
+}
+
+// Excercise modal
+.exercise-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1100;
+
+  &__container {
+    max-width: 320px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%);
+    width: 100%;
+    
+    .exercise-modal__title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: $tertiary-color;
+    }
+    
+    .exercise-modal__input-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      
+      & input,
+      & textarea {
+        flex: 1 1 250px;
+        padding: 0.5rem;
+        border: 1px solid #222;
+        border-radius: 5px;
+        font-family: $secondary-font;
+        font-size: 0.8rem;
+      }
+
+      .exercise-modal__set-rep {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 100%;
+
+        .exercise-modal__input-sets {
+          width: 60px;
+        }
+
+        .exercise-modal__input-reps {
+          width: 60px;
+        }
+      }
+      
+      .exercise-modal__rir-intensity {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 100%;
+
+        .exercise-modal__input-rir {
+          width: 120px;
+        }
+        
+        .exercise-modal__input-intensity {
+          width: 120px;
+        }
+      }
+
+      .exercise-modal__tempo-rest {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 100%;
+
+        .exercise-modal__input-tempo {
+          width: 120px;
+        }
+
+        .exercise-modal__input-rest {
+          width: 120px;
+        }
+      }
+      
+      .exercise-modal__input-notes {
+        flex: 1 1 100%;
+        min-height: 60px;
+      }
+    }
+    
+    .exercise-modal__button-container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      
+      .exercise-modal__button {
+        padding: 5px;
+        margin: 5px 0;
+        background-color: #222;
+        border: 1px solid #222;
+        border-radius: 5px;
+        font-family: $secondary-font;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: #ffffff;
+        cursor: pointer;
+  
+        &:hover {
+            background-color: #333;
+        }
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    .exercise-modal__button-container {
+      .exercise-modal__button {
+        align-self: start;
+        width: auto;
+        padding: 8px;
+        font-size: 0.78rem;
+      }
+    }
+  }
+
+  @include respond-to(laptop) {
+    .exercise-modal__title {
+      font-size: 1.85rem;
+    }
+    
+    .exercise-modal__input-container {
+
+      & input,
+      & textarea {
+        padding: 0.65rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .exercise-modal__button-container {
+      .exercise-modal__button {
+        font-size: 0.8rem;
+      }
     }
   }
 }

@@ -56,6 +56,7 @@ export default function ExerciseModal({ isOpen, onClose, onSave, initialData }) 
                         placeholder="Nombre del ejercicio"
                         className="exercise-modal__input-excercise-name"
                     />
+                    <div className="exercise-modal__set-rep">
                     <input
                         name="series"
                         value={formData.series}
@@ -63,20 +64,53 @@ export default function ExerciseModal({ isOpen, onClose, onSave, initialData }) 
                         placeholder="Series"
                         className="exercise-modal__input-sets"
                     />
-                    <input
-                        name="minReps"
-                        value={formData.minReps}
-                        onChange={handleChange}
-                        placeholder="Reps mínimas"
-                        className="exercise-modal__input-reps"
-                    />
-                    <input
-                        name="maxReps"
-                        value={formData.maxReps}
-                        onChange={handleChange}
-                        placeholder="Reps máximas"
-                        className="exercise-modal__input-reps"
-                    />
+                        <input
+                            name="minReps"
+                            value={formData.minReps}
+                            onChange={handleChange}
+                            placeholder="Reps Mín"
+                            className="exercise-modal__input-reps"
+                        />
+                        <input
+                            name="maxReps"
+                            value={formData.maxReps}
+                            onChange={handleChange}
+                            placeholder="Reps Máx"
+                            className="exercise-modal__input-reps"
+                        />
+                    </div>
+                    <div className="exercise-modal__rir-intensity">
+                        <input
+                            name="rir"
+                            value={formData.rir}
+                            onChange={handleChange}
+                            placeholder="RIR"
+                            className="exercise-modal__input-rir"
+                        />
+                        <input
+                            name="intensity"
+                            value={formData.intensity}
+                            onChange={handleChange}
+                            placeholder="Intensidad"
+                            className="exercise-modal__input-intensity"
+                        />
+                    </div>
+                    <div className="exercise-modal__tempo-rest">
+                        <input
+                            name="tempo"
+                            value={formData.tempo}
+                            onChange={handleChange}
+                            placeholder="Tempo"
+                            className="exercise-modal__input-tempo"
+                        />
+                        <input
+                            name="rest"
+                            value={formData.rest}
+                            onChange={handleChange}
+                            placeholder="Descanso"
+                            className="exercise-modal__input-rest"
+                        />
+                    </div>
                     <textarea
                         name="notes"
                         value={formData.notes}
