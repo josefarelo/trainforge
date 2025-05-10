@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 const db = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const muscleRoutes = require("./routes/muscleRoutes");
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -30,6 +32,8 @@ if (process.env.NODE_ENV === "development") {
 // Rutas
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api", muscleRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`✅ Servidor corriendo en el puerto ${PORT}`);

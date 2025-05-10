@@ -7,7 +7,22 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentExerciseIndex, setCurrentExerciseIndex] = useState(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [muscles, setMuscles] = useState([]);
 
+    // Obtener músculos
+    useEffect(() => {
+        const fetchMuscles = async () => {
+            try {
+                const response = await fetch("/api/muscles");
+                const data = await response.json();
+                setMuscles(data);
+            } catch (error) {
+                console.error("Error al cargar músculos:", error);
+            }
+        };
+    
+        fetchMuscles();
+    }, []);
 
     useEffect(() => {
         onUpdate({
@@ -109,13 +124,18 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
 
                 {exercises.map((exercise, index) => (
                     <div className="day-card__day-table-input-container" key={exercise.id}>
-                        <input
-                            type="text"
-                            value={exercise.muscle}
-                            onChange={(e) => updateExercise(index, "muscle", e.target.value)}
-                            placeholder="Músculo"
-                            className="day-card__day-table-input"
-                        />
+                    <select
+                        value={exercise.muscle}
+                        onChange={(e) => updateExercise(index, "muscle", e.target.value)}
+                        className="day-card__day-table-input"
+                    >
+                        <option value="">Seleccionar músculo</option>
+                        {muscles.map((muscle) => (
+                            <option key={muscle.id_musculo} value={muscle.id_musculo}>
+                                {muscle.nombre_musculo}
+                            </option>
+                        ))}
+                    </select>
                         <div className="day-card__day-table-excercise">
                             <input
                                 type="text"
