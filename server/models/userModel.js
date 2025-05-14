@@ -2,7 +2,7 @@ const db = require("../config/db");
 
 const User = {
     // Añade nuevo usuario a la base de datos
-    create: (userData, hashedPassword, callback) => {
+    create: async (userData, hashedPassword) => {
         const query = `
             INSERT INTO tbl_users 
             (nickname, birthdate, sex, height_cm, height_ft, weight_kg, weight_lb, email, password_hash) 
@@ -19,13 +19,14 @@ const User = {
             userData.email,
             hashedPassword
         ];
-        db.query(query, values, callback);
+        const [result] = await db.query(query, values);
+        return result;
     },
 
-    // Búsqueda de usuario por email
-    findByEmail: (email, callback) => {
+    findByEmail: async (email) => {
         const query = "SELECT * FROM tbl_users WHERE email = ?";
-        db.query(query, [email], callback);
+        const [rows] = await db.query(query, [email]);
+        return rows[0];
     }
 };
 

@@ -14,10 +14,14 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
         const fetchMuscles = async () => {
             try {
                 const response = await fetch("/api/muscles");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
                 setMuscles(data);
             } catch (error) {
                 console.error("Error al cargar músculos:", error);
+                // Manejo adicional del error si es necesario
             }
         };
     
@@ -124,18 +128,22 @@ export default function DayContainer({ day, onRemove, onUpdate, isFirstDay = fal
 
                 {exercises.map((exercise, index) => (
                     <div className="day-card__day-table-input-container" key={exercise.id}>
-                    <select
-                        value={exercise.muscle}
-                        onChange={(e) => updateExercise(index, "muscle", e.target.value)}
-                        className="day-card__day-table-input"
-                    >
-                        <option value="">Seleccionar músculo</option>
-                        {muscles.map((muscle) => (
-                            <option key={muscle.id_musculo} value={muscle.id_musculo}>
-                                {muscle.nombre_musculo}
-                            </option>
-                        ))}
-                    </select>
+                        <select
+                            value={exercise.muscle}
+                            onChange={(e) => updateExercise(index, "muscle", e.target.value)}
+                            className="day-card__day-table-input"
+                        >
+                            <option className="day-card__day-table-input-option" value="">Seleccionar músculo</option>
+                            {muscles.map((muscle) => (
+                                <option 
+                                    key={muscle.id_musculo} 
+                                    value={muscle.id_musculo}
+                                    className="day-card__day-table-input-option"
+                                >
+                                    {muscle.nombre_musculo}
+                                </option>
+                            ))}
+                        </select>
                         <div className="day-card__day-table-excercise">
                             <input
                                 type="text"
